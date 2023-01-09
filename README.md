@@ -1,0 +1,2 @@
+# learn-gatsby
+praticing gatsby 

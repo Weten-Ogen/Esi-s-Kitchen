@@ -1,2 +1,1 @@
-# learn-gatsby
-praticing gatsby 
+fiie

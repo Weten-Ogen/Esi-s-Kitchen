@@ -1,5 +1,5 @@
 {
-  "name": "esi's kitchen",
+  "name": "esi-s-kitchen",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.4",
+    "@next/env": "^14.2.3",
+    "@prisma/client": "^5.13.0",
     "@radix-ui/react-avatar": "^1.0.4",
     "@radix-ui/react-dialog": "^1.0.5",
     "@radix-ui/react-dropdown-menu": "^2.0.6",
@@ -21,6 +23,7 @@
     "clsx": "^2.1.1",
     "lucide-react": "^0.373.0",
     "next": "14.2.3",
+    "next-auth": "^5.0.0-beta.17",
     "react": "^18",
     "react-dom": "^18",
     "react-hook-form": "^7.51.3",
@@ -33,6 +36,7 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "postcss": "^8",
+    "prisma": "^5.13.0",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
   }

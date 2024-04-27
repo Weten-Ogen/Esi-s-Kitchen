@@ -12,17 +12,17 @@ export default function Home() {
   return (
     <section className="scroll-smooth ">
         {/* hero section */}
-        <article className="h-screen bg-orange-500 bg-gradient-to-r ">
-          <div className="grid md:grid-cols-2 gap-8 items-center justify-center">
+        <article className="">
+          <div className="">
 
-            <div className="mx-auto space-y-3">
+            <div className="">
             {/* image start here */}
-            <h2 className="text-2xl tracking-wider text-white ">Make every milestone memorable</h2>
-            <h3 className="text-lg tracking-wider text-white">Celebrate with better food for better mood ...</h3>
+            <h2 className="">Make every milestone memorable</h2>
+            <h3 className="">Celebrate with better food for better mood ...</h3>
             <Btn 
             vatype="outline"
             name="get started" 
-            className="text-orange-300 capitalize tracking-wider  hover:bg-white hover:-translate-y-0.5 rounded-[sm]  px-6 py-2 ring-1 ring-orange-600 shadow-lg shadow-white text-lg hover:text-orange-500" 
+            className="" 
              />
             
             </div>
@@ -37,8 +37,8 @@ export default function Home() {
           </div>
         </article>
         {/*story*/}
-        <article className="h-screen ">
-          <div className="flex items-center ">
+        <article className="">
+          <div className="">
             <div>
               <h2 className="">our story</h2>
               <p>Hello from Esi's Kitchen ! We are a group of chefs and cooks who like making delicious and personnalized food for meaningful moments such as  weddings, engagements and other milestone parties.</p>
@@ -62,9 +62,9 @@ export default function Home() {
 
                 {/*services*/}
         <article className="">
-          <h2 className="text-2xl tracking-wider capitalize underline-offset-4  font-bold">services</h2>
-          <div className="p-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center gap-4">
+          <h2 className="">services</h2>
+          <div className="">
+            <div className="">
              <ServiceCard name="buffet service" comment="engagement and wedding refreshments"/> 
              <ServiceCard name="full option buffet service" comment="we plan, execute and manage  your event to completion"/>   
              <ServiceCard name="packed service" comment="for that snappy taste and refreshments"/>

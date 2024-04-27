@@ -7,7 +7,7 @@ export default function NavBar() {
 
   return (
     <nav className="flex justify-between items-center py-2 sm:py-4 sm:px-12 px-4 border border-bottom fixed w-full top-0 z-20 ">
-        <header className="uppercase font-bold tracking-wider">
+        <header>
             <NavLinks reff="/">
               <Image
               src={Logo2}
@@ -17,9 +17,9 @@ export default function NavBar() {
               />
             </NavLinks>
         </header>
-        <ul className="flex items-center tracking-wider  capitalize  gap-2">
+        <ul >
             <NavLinks 
-               className="hover:underline capitalize text-lg ">
+               >
                 <DropDown />
             </NavLinks>
             

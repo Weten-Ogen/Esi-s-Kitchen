@@ -9,7 +9,7 @@ import NavLinks from './navlinks'
 
 export default function DropDown({className}:dropdown) {
   return (
-    <DropdownMenu className={cn('',className)}>
+    <DropdownMenu>
       <DropdownMenuTrigger>
             <Menu/>
       </DropdownMenuTrigger>

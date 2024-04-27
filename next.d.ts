@@ -18,7 +18,7 @@ interface dropdown extends React.ComponentProps<typeof DropdownMenu> {
 }
 
 interface btn {
-    vatype?:string,
+    vatype?:'default'| 'outline'|'ghost'|'secondary'|null|undefined|'link'|'destructive',
     className?:string,
     name:string,
     children?:React.ReactElement,

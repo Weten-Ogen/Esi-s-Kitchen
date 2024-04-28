@@ -58,8 +58,3 @@ interface testicard {
     className:string,    
 }
 
-interface gridlayout{
-    images:string[] | SaticImport[],
-    className?:string,
-    contents: string[]
-}

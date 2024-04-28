@@ -38,7 +38,7 @@ interface packcard {
     name : string,
     price: number,
     items: string[],
-    imageurl?:string | StaticImport
+    imageurl:string | StaticImport 
 }
 
 interface packages {

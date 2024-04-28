@@ -1,6 +1,7 @@
 import React from "react"
 import { DropdownMenu } from "./components/ui/dropdown-menu"
 import { StaticImageData } from "next/image"
+import { StaticImport } from "next/dist/shared/lib/get-img-props"
 
 interface providers {
     children: React.ReactNode
@@ -49,4 +50,10 @@ interface packages {
 
 interface singlebook {
     params:{id: string}
+}
+
+interface testicard {
+    imageurl: string | StaticImport,
+    comment: string,
+    className:string,    
 }

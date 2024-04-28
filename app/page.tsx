@@ -3,7 +3,11 @@ import    Pic2   from "@/public/images/serveself.jpg"
 import Pic1 from '@/public/images/buffet.jpg'
 import Btn from "@/components/general/btn";
 import ServiceCard from "@/components/custom/servicecard";
-
+import TestiCard from "@/components/custom/testicard";
+import Test1 from '@/public/testimonial/testmo1.jpg'
+import Test2 from "@/public/testimonial/testmo2.jpg";
+import Test3 from "@/public/testimonial/testmo3.jpg";
+import Footer from "@/components/general/footer";
 
 export default function Home() {
   return (
@@ -70,8 +74,31 @@ export default function Home() {
 
           </div>
         </article>
+        {/* testimonials */}
+        <article>
+          <h2>testimonials</h2>
+          {/* testicard */}
+          <ul className="flex items-center gap-4 p-4">
+            <TestiCard
+            comment="For my sister's wedding, We chose Esi's Kitchen as the caterers and we couldn't be happier with our decision"
+            imageurl={Test1}
+            className=""
+            />
+            <TestiCard
+            comment="I love my engagement buffet  setup because, my fiance worked closely with Esi's Kitchen to design the decor literally just for me"
+            imageurl={Test2}
+            className=""
+            />
+            <TestiCard
+            comment="My mom loved the jollof I sent her for her birthday. She loved the taste of homemade and personnalized service of Esi's kitchen.Thinking of ordering two packs for myself, too!"
+            imageurl={Test3}
+            className=""
+            />
 
-
+          </ul>
+        </article>
+      {/* footer */}
+      <Footer/>
     </section>
   )
 }

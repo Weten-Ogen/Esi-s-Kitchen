@@ -6,7 +6,7 @@ import Logo2 from '@/public/logo2.png'
 export default function NavBar() {
 
   return (
-    <nav className="flex justify-between items-center py-2 sm:py-4 sm:px-12 px-4 border border-bottom fixed w-full top-0 z-20 ">
+    <nav className="flex justify-between items-center py-2 sm:py-4 sm:px-12 px-4 border border-bottom border-tcolor fixed w-full bg-tcolor top-0 z-20 ">
         <header>
             <NavLinks reff="/">
               <Image

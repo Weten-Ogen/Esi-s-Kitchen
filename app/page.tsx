@@ -1,9 +1,6 @@
 import Image from "next/image";
-import Pic1 from '@/public/pic1.png';
-import Pic2 from  '@/public/pic2.png';
-import Pic3 from '@/public/pic3.png';
-import Pic4 from '@/public/pic4.png';
-import Pic5 from '@/public/pic5.png';
+import    Pic2   from "@/public/images/serveself.jpg"
+import Pic1 from '@/public/images/buffet.jpg'
 import Btn from "@/components/general/btn";
 import ServiceCard from "@/components/custom/servicecard";
 

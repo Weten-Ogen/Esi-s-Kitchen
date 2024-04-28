@@ -1,3 +1,4 @@
+import PackForm from '@/components/custom/packform';
 import { singlebook } from '@/next'
 import React from 'react'
 
@@ -6,9 +7,10 @@ export default function SingleBooking({params}:singlebook) {
   return (
     <div className="font-bold text-4xl ">
       <div className='p-8'>
-        <div>
-            {id}
+        <div className="text-xl">
+            {id} package
         </div>
+        <PackForm/>
       </div>
     </div>
   )

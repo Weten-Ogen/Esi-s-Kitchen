@@ -45,7 +45,7 @@ interface packages {
     type: string,
     price:number,
     items: string[],
-    imageurl?:string | StaticImport
+    imageurl:string | StaticImport
 }
 
 interface singlebook {
@@ -56,4 +56,10 @@ interface testicard {
     imageurl: string | StaticImport,
     comment: string,
     className:string,    
+}
+
+interface gridlayout{
+    images:string[] | SaticImport[],
+    className?:string,
+    contents: string[]
 }

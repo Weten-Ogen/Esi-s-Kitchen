@@ -31,7 +31,6 @@ export default function DropDown({className}:dropdown) {
         <DropdownMenuItem>
           <NavLinks name="admin" reff="/admin" className=''/>
         </DropdownMenuItem>
-        
       </DropdownMenuContent>
     </DropdownMenu>
   )

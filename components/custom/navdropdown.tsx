@@ -26,9 +26,6 @@ export default function DropDown({className}:dropdown) {
           <NavLinks name="bookings" reff="/bookings" className=''/>
         </DropdownMenuItem>
         <DropdownMenuItem>
-          <NavLinks name="dishes" reff="/dish" className=''/>
-        </DropdownMenuItem>
-        <DropdownMenuItem>
           <NavLinks name="settings" reff="/settings" className=''/>
         </DropdownMenuItem>
         <DropdownMenuItem>

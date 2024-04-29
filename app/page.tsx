@@ -16,14 +16,15 @@ export default function Home() {
         <article className="">
           <div className="">
 
-            <div className="">
+            <div className="p-8 mx-auto space-y-2">
             {/* image start here */}
-            <h2 className="">Make every milestone memorable</h2>
-            <h3 className="">Celebrate with better food for better mood ...</h3>
+            <h2 className="text-secondarycolor font-bold text-lg  tracking-wide lowercase">Make every milestone memorable</h2>
+            <h3 className="capitalize text-xl tracking-wider whitespace-normal text-slate-800 font-bold"> better food 
+            better mood ...</h3>
             <Btn 
-            vatype="outline"
-            name="get started" 
-            className="" 
+            vatype="default"
+            name="book now" 
+            className="text-white bg-gradient-to-l capitalize outline-white tracking-wider shadow-lg hover:-translate-y-0.5 from-orange-500 to-orange-400 bg-orange-500 text-sm" 
              />
             
             </div>
@@ -33,12 +34,13 @@ export default function Home() {
                 alt={"hero image"}
                 width={500}
                 height={500}
+                className="w-full rounded-lg"
                 />
             </div>
           </div>
         </article>
         {/*story*/}
-        <article className="">
+        <article className="text-lg">
           <div className="">
             <div>
               <h2 className="">our story</h2>
@@ -62,7 +64,7 @@ export default function Home() {
         </article>
 
                 {/*services*/}
-        <article className="">
+        <article className="text-lg">
           <h2 className="">services</h2>
           <div className="">
             <div className="">
@@ -75,7 +77,7 @@ export default function Home() {
           </div>
         </article>
         {/* testimonials */}
-        <article>
+        <article className="text-sm">
           <h2>testimonials</h2>
           {/* testicard */}
           <ul className="flex items-center gap-4 p-4">

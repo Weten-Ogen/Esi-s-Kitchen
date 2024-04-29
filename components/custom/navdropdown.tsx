@@ -1,4 +1,3 @@
-"use client"
 import { dropdown } from '@/next'
 import React from 'react'
 import { DropdownMenu,DropdownMenuItem,DropdownMenuGroup,DropdownMenuContent,DropdownMenuSeparator,DropdownMenuTrigger, } from '../ui/dropdown-menu'
@@ -9,12 +8,12 @@ import NavLinks from './navlinks'
 
 export default function DropDown({className}:dropdown) {
   return (
-    <DropdownMenu>
+    <DropdownMenu >
       <DropdownMenuTrigger>
-            <Menu className='text-white'/>
+            <Menu className='text-orange-500 font-bold text-2xl'/>
       </DropdownMenuTrigger>
       <DropdownMenuContent  className="">
-        <DropdownMenuLabel className=''>Esi's kitchen</DropdownMenuLabel>
+        <DropdownMenuLabel className=''>Esi&#8217s kitchen</DropdownMenuLabel>
         <DropdownMenuSeparator/>
         <DropdownMenuItem  className=''>
           <NavLinks name="home" reff="/" className='capitalize text-lg tracking-wider '/>

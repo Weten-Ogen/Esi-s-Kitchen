@@ -9,7 +9,7 @@ interface providers {
 
 interface navlink {
     name?: string,
-    reff?: string,
+    reff: string,
     children?:React.ReactElement,
     className?: string,
 }

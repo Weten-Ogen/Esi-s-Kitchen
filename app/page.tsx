@@ -11,9 +11,9 @@ import Footer from "@/components/general/footer";
 
 export default function Home() {
   return (
-    <section className="scroll-smooth ">
+    <section className="scroll-smooth space-y-20 ">
         {/* hero section */}
-        <article className="">
+        <article className="h-screen">
           <div className="">
 
             <div className="p-8 mx-auto space-y-2">
@@ -40,12 +40,12 @@ export default function Home() {
           </div>
         </article>
         {/*story*/}
-        <article className="text-lg">
+        <article className="h-screen bg-secondarycolor bg-gradient-to-r from-secondarycolor to-primecolor">
           <div className="">
-            <div>
-              <h2 className="">our story</h2>
-              <p>Hello from Esi's Kitchen ! We are a group of chefs and cooks who like making delicious and personnalized food for meaningful moments such as  weddings, engagements and other milestone parties.</p>
-              <p>
+            <div className="m-2 text-justify space-y-5">
+              <h2 className="text-xl font-bold  uppercase text-white tracking-widest text-center">our story</h2>
+              <p className="text-lg">Hello from Esi's Kitchen ! We are a group of chefs and cooks who like making delicious and personnalized food for meaningful moments such as  weddings, engagements and other milestone parties.</p>
+              <p className="text-lg">
                 Our dishes are thoughtfully made for your taste.
                 We do deliveries in all suburbs of Greater Accra. 
               </p>
@@ -53,21 +53,17 @@ export default function Home() {
             <Image
             alt="story pic"
             src={Pic2}
+            className="w-full py-5"
             width={800}
             height={800}
             />
-            <div>
-
-            </div>
-
           </div>
         </article>
-
-                {/*services*/}
+        {/*services*/}
         <article className="text-lg">
           <h2 className="">services</h2>
           <div className="">
-            <div className="">
+            <div className="grid grid-cols-1 gap-4 p-2">
              <ServiceCard name="buffet service" comment="engagement and wedding refreshments"/> 
              <ServiceCard name="full option buffet service" comment="we plan, execute and manage  your event to completion"/>   
              <ServiceCard name="packed service" comment="for that snappy taste and refreshments"/>

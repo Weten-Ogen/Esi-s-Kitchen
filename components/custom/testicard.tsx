@@ -5,16 +5,20 @@ import React from 'react'
 
 export default function TestiCard({imageurl,className,comment}:testicard) {
   return (
-    <div className={cn('rounded-lg bg-primecolor text-white p-2',className)}>
+    <div className={cn('rounded-lg my-10 shadow-xl relative text-white p-2 ',className)}>
+      <div className="w-full h-[50vh] md:h-[70vh] object-contain overflow-hidden">
         <Image 
             src={imageurl}
             alt={`${imageurl}`}
             width={500}
-            height={400}
-            sizes={"100"}
-            className="w-full"
+            height={500}
+            className="w-full bg-scroll object-cover"
         />
-        <p className="">{comment}</p>
+
+      </div>
+      <div className='relative  '>
+        <p className="text-white text-lg absolute bg-orange-400 text-clip text-justify font-medium rounded-b-lg p-3 m-2  -top-20 tracking-wide">" {comment} "</p>
+      </div>
     </div>
   )
 }

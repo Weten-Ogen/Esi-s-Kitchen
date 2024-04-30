@@ -7,7 +7,7 @@ export default function AppProvider({children}:providers) {
   return (
     <>
     <NavBar/>
-    <main className="pt-16 ">
+    <main className="md:w-[80%] md:mx-auto ">
         {children}
     </main>
     </>

@@ -6,7 +6,7 @@ import Logo2 from '@/public/logo2.png'
 export default function NavBar() {
 
   return (
-    <nav className="flex justify-between items-center  fixed w-full top-0 z-20 bg-slate-900 md:px-6   ">
+    <nav className="flex justify-between items-center  fixed w-full top-0 z-20 bg-slate-900 md:px-6">
         <header className= "p-2">
         <NavLinks className="cursor-pointer" reff={"/"}>
               <Image
@@ -24,8 +24,8 @@ export default function NavBar() {
              name="home" 
             reff="/" className="capitalize text-lg opacity-70 hover:opacity-90   ease-out duration-500  hover:-translate-y-0.5  tracking-wider "/>
             <NavLinks
-             name="dashboard" 
-            reff="/dashboard" className="capitalize text-lg opacity-70 hover:opacity-90   ease-out duration-500  hover:-translate-y-0.5  tracking-wider "/>
+             name="about" 
+            reff="/about" className="capitalize text-lg opacity-70 hover:opacity-90   ease-out duration-500  hover:-translate-y-0.5  tracking-wider "/>
             <NavLinks
              name="bookings" 
             reff="/bookings" 
@@ -33,15 +33,11 @@ export default function NavBar() {
             <NavLinks
              name="admin" 
             reff="/admin" className="capitalize text-lg opacity-70 hover:opacity-90   ease-out duration-500  hover:-translate-y-0.5  tracking-wider "/>
-            <NavLinks
-             name="settings" 
-            reff="/settings" className="capitalize text-lg opacity-70 hover:opacity-90 underline-offset-2  ease-out duration-500  hover:-translate-y-0.5  tracking-wider "/>
+            
           </ul>
           <ul className="md:hidden mr-4">
-
               <DropDown />
           </ul>
-
         </div>
 
     </nav>

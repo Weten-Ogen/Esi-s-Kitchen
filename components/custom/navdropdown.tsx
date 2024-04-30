@@ -13,23 +13,25 @@ export default function DropDown({className}:dropdown) {
             <Menu className='text-orange-500 font-bold text-2xl'/>
       </DropdownMenuTrigger>
       <DropdownMenuContent  className="">
-        <DropdownMenuLabel className=''>Esi&#8217s kitchen</DropdownMenuLabel>
+        <DropdownMenuLabel className='font-bold text-lg text-orange-500 tracking-wider whitespace-normal'>Esi's kitchen</DropdownMenuLabel>
         <DropdownMenuSeparator/>
-        <DropdownMenuItem  className=''>
-          <NavLinks name="home" reff="/" className='capitalize text-lg tracking-wider '/>
+        <DropdownMenuItem  className='text-lg tracking-wider whitespace-normal'>
+          <NavLinks name="home"  reff="/" />
         </DropdownMenuItem>
-        <DropdownMenuItem >
-          <NavLinks name="dashboard" reff="/dashboard" className=''/>
+        <DropdownMenuSeparator/>
+        <DropdownMenuItem className='text-lg tracking-wider whitespace-normal' >
+          <NavLinks name="about" reff="/about" className=''/>
         </DropdownMenuItem>
-        <DropdownMenuItem>
+        <DropdownMenuSeparator/>
+        <DropdownMenuItem className='text-lg tracking-wider whitespace-normal'> 
           <NavLinks name="bookings" reff="/bookings" className=''/>
         </DropdownMenuItem>
-        <DropdownMenuItem>
-          <NavLinks name="settings" reff="/settings" className=''/>
-        </DropdownMenuItem>
-        <DropdownMenuItem>
+        <DropdownMenuSeparator/>
+        
+        <DropdownMenuItem className='text-lg tracking-wider whitespace-normal'>
           <NavLinks name="admin" reff="/admin" className=''/>
         </DropdownMenuItem>
+        <DropdownMenuSeparator/>
       </DropdownMenuContent>
     </DropdownMenu>
   )

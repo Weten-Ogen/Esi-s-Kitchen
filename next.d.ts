@@ -31,13 +31,13 @@ interface servicecard {
     name:string,
     comment:string,
     className?:string,
-    
+    reff?:string    
 }
 
 interface packcard {
     name : string,
     price: number,
-    items: string[],
+    items: string[],    
     imageurl:string | StaticImport 
 }
 
@@ -49,7 +49,7 @@ interface packages {
 }
 
 interface singlebook {
-    params:{id: string}
+    params:{service: string}
 }
 
 interface testicard {

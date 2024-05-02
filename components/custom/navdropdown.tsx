@@ -11,7 +11,7 @@ export default function DropDown({className}:dropdown) {
     <DropdownMenu >
       <DropdownMenuTrigger>
             <Menu
-            size={30} 
+            size={25} 
             className='text-orange-500  font-bold '/>
       </DropdownMenuTrigger>
       <DropdownMenuContent  className="">

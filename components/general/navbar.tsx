@@ -9,7 +9,7 @@ import { Clipboard, ClipboardCheck, Home,Server,ShoppingBag,ShoppingCart, Users 
 export default function NavBar() {
 
   return (
-    <nav className="flex md:justify-between gap-4 items-center  fixed w-full top-0 z-20 bg-slate-900 md:px-6">
+    <nav className="flex justify-between gap-4 items-center  fixed w-full top-0 z-20 bg-slate-900 md:px-6">
         <header className= "p-2">
         <NavLinks className="cursor-pointer" reff={"/"}>
               <Image
@@ -21,28 +21,28 @@ export default function NavBar() {
               />
             </NavLinks>
         </header>
-        <div className="flex items-center gap-6 md:hidden text-secondcolor"> 
+        <div className="flex items-center gap-8 md:hidden text-secondcolor"> 
         <NavLinks reff="/">
           <Home 
           className="" 
-          size={30}
+          size={25}
           />
         </NavLinks>
         <NavLinks reff="/about">
           <Users 
           className="" 
-          size={30}
+          size={25}
            />
         </NavLinks>
         <NavLinks reff="/bookings">
           <ClipboardCheck 
           className="" 
-          size={30}
+          size={25}
           />
 
         </NavLinks>
         <NavLinks reff="/admin">
-          <Server size={30}/>
+          <Server size={25}/>
         </NavLinks>
         </div>
         <div className="flex items-center  ml-auto">
@@ -66,9 +66,7 @@ export default function NavBar() {
             
             
           </ul>
-          <ul className="md:hidden ">
-              <DropDown />
-          </ul>
+          
           <AvaTar 
           name="Marcus" 
           className="m-2"

@@ -93,7 +93,7 @@ export default function Home() {
 
 
         {/* testimonials */}
-        <article className="min-h-screen md:h-screen overflow-hidden">
+        <article className="min-h-screen md:h-screen overflow-hidden p-4">
           <h2 className="font-bold  text-2xl  capitalize tracking-wider text-clip whitespace-normal">testimonials</h2>
           {/* testicard */}
           <ul className="grid grid-cols-1  md:grid-cols-3 justify-center items-center gap-2 ">

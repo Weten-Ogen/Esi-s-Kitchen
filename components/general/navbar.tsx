@@ -3,6 +3,7 @@ import DropDown from "../custom/navdropdown";
 import NavLinks from "../custom/navlinks";
 import Logo2 from '@/public/logo2.png'
 import AvaTar from "../custom/avaatar";
+import { Home } from "lucide-react";
 
 
 export default function NavBar() {
@@ -20,6 +21,10 @@ export default function NavBar() {
               />
             </NavLinks>
         </header>
+        <div>
+          <Home/>
+          
+        </div>
         <div className="flex items-center  gap-2">
         <AvaTar name="Marcus" className=""
         />

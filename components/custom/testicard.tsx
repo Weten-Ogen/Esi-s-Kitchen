@@ -17,7 +17,7 @@ export default function TestiCard({imageurl,className,comment}:testicard) {
 
       </div>
       <div className='relative  '>
-        <p className="text-white text-lg absolute bg-orange-400 text-clip text-justify font-medium rounded-b-lg p-3 m-2  -top-20 tracking-wide">" {comment} "</p>
+        <p className="text-white text-md absolute bg-orange-400 text-clip text-center font-medium rounded-b-lg p-2 m-2  -top-20 tracking-wide">" {comment} "</p>
       </div>
     </div>
   )

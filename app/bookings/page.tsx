@@ -2,6 +2,7 @@ import RedPic from '@/public/images/redpack.jpg'
 import React from 'react'
 import ServiceCard from '@/components/custom/servicecard'
 import Image from 'next/image'
+import Footer from '@/components/general/footer'
 
 
 export default function Bookings() {
@@ -44,7 +45,7 @@ export default function Bookings() {
           comment="for that snappy taste and refreshments"/>    
       </div>
             
-      
+      <Footer/>      
     </section>
   )
 }

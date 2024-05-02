@@ -6,6 +6,7 @@ import Dash6 from '@/public/images/serveself.jpg'
 import Dash9 from "@/public/images/jollofs.jpg"
 import Logo from '@/public/logo.png'
 import FriedRice from '@/public/products/friedrice.jpg'
+import Footer from '@/components/general/footer';
 
 
 export default function About() {
@@ -35,7 +36,7 @@ export default function About() {
                 <div className="">
                     <div className="text-2xl tracking-wider whitespace-normal  text-clip  font-medium ">
                         <p className='text-3xl italic uppercase text-orange-500'>better food</p>
-                        <p className="text-center uppercase italic">better mood</p>
+                        <p className="text-center text-3xl text-orange-500 uppercase italic">better mood</p>
                     </div>
                 </div>
             </div>
@@ -141,7 +142,9 @@ export default function About() {
                 </div>
             </div>
         </article>
-
+        <article>
+            <Footer/>
+        </article>       
     </section>
   )
 }

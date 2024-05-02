@@ -93,10 +93,10 @@ export default function Home() {
 
 
         {/* testimonials */}
-        <article className="min-h-screen md:h-screen overflow-hidden p-4 my-4">
+        <article className=" md:h-screen overflow-hidden  mt-2 pb-10">
           <h2 className="font-bold  text-2xl  capitalize tracking-wider text-clip whitespace-normal">testimonials</h2>
           {/* testicard */}
-          <ul className="grid grid-cols-1  md:grid-cols-3 justify-center items-center gap-2 ">
+          <ul className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <TestiCard
             comment="For my sister's wedding, We chose Esi's Kitchen as the caterers and we couldn't be happier with our decision"
             imageurl={Test1}
@@ -106,7 +106,7 @@ export default function Home() {
             comment="I love my engagement buffet  setup because, my fiance worked closely with Esi's Kitchen to design the decor literally just for me"
             imageurl={Test2}
             className=""
-            />
+            />  
             <TestiCard
             comment="My mom loved the jollof I sent her for her birthday. She loved the taste of homemade and personnalized service of Esi's kitchen.Thinking of ordering two packs for myself, too!"
             imageurl={Test3}

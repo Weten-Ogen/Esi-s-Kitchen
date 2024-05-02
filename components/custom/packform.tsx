@@ -8,14 +8,16 @@ import { Input } from '../ui/input'
 import {Button} from '../ui/button'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../ui/select'
 
+
+
 const formSchema =  z.object({
     name:z.string().min(2).max(50),
     email:z.string().email().optional(),
-    contact:z.number(),
+    contact:z.string(),
     venue:z.string(),
-    tel:z.number().optional(),
+    tel:z.string().optional(),
     date:z.string().date(),
-    time:z.string().time(),
+    time:z.string(),
     occassion:z.string(),
     package:z.string(),
     population:z.number().min(200)
@@ -34,11 +36,11 @@ export default function PackForm() {
     })
 
     const handlesubmit = () => {
-        
+               
     }
 
   return (
-    <Form {...form}>
+    <Form {...form} >
         <form onSubmit={form.handleSubmit(handlesubmit)}
         >
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-2">
@@ -94,7 +96,7 @@ export default function PackForm() {
                             <Input 
                             placeholder="contact"
                             className=""
-                            type="tel"
+                            
                             {...field}
                             />
                         </FormControl>
@@ -113,7 +115,7 @@ export default function PackForm() {
                             <Input 
                             placeholder="other tel"
                             className=""
-                            type="tel"
+                            type='number'
                             {...field}
                             />
                         </FormControl>
@@ -154,7 +156,7 @@ export default function PackForm() {
                             <Input 
                             placeholder="time"
                             className=""
-                            {...field}
+                             {...field}
                             type="time"
                             />
                         </FormControl>
@@ -249,7 +251,6 @@ export default function PackForm() {
                             <FormLabel className="text-lg text-white tracking-wider text-clip whitespace-normal">number per head</FormLabel>
                             <FormControl>
                                 <Input 
-                                type='number'
                                 placeholder="100"
                                 className=""
                                 {...field}

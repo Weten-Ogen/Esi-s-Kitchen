@@ -39,7 +39,7 @@ export default function NavBar() {
           className="" 
           size={25}
           />
-
+      
         </NavLinks>
         <NavLinks reff="/admin">
           <Server size={25}/>

@@ -21,7 +21,7 @@ export default function NavBar() {
               />
             </NavLinks>
         </header>
-        <div className="flex items-center gap-8 md:hidden text-secondcolor"> 
+        <div className="flex items-center justify-around gap-8 md:hidden text-red-500 "> 
         <NavLinks reff="/">
           <Home 
           className="" 

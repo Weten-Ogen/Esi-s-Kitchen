@@ -52,6 +52,17 @@ interface singlebook {
     params:{service: string}
 }
 
+interface avaatar{
+    imageurl?:string,
+    name:string,
+    className?:string,
+
+}
+
+interface signinbtn{
+    name:string
+}
+
 interface testicard {
     imageurl: string | StaticImport,
     comment: string,

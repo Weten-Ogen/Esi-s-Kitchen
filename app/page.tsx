@@ -21,17 +21,24 @@ export default function Home() {
               <h2 className="text-2xl md:text-4xl  font-bold whitespace-normal uppercase antialiased text-center  tracking-widest">Make every milestone memorable</h2>
               <h3 className="text-lg text-clip text-orange-500 md:text-xl text-center  font-bold tracking-wider whitespace-normal capitalize my-3"> better food 
               better mood </h3>
-              <div className="mx-auto  w-full md:w-[50%] px-6">
-                <NavLinks reff="/bookings">
+              <div className="mx-auto flex gap-4  items-center justify-center">
+                <NavLinks reff="/about">
 
                     <Btn 
                     vatype="default"
-                    name="book now" 
+                    name="learn more" 
                     className="w-full bg-secondcolor text-white text-lg tracking-widest antialiased outline-secondcolor  shadow-md
-                    hover:bg-white uppercase font-bold " 
+                    hover:bg-secondcolor uppercase font-bold " 
                     />
                 </NavLinks>
-
+                <NavLinks reff="/bookings/buffet">
+                <Btn 
+                vatype="default"
+                name="book now" 
+                className="w-full bg-orange-500  text-white text-lg tracking-widest antialiased outline-orange-500  shadow-md
+                hover:bg-orange-500 uppercase font-bold " 
+                />
+                </NavLinks>
               </div>
           </div>
           </div>

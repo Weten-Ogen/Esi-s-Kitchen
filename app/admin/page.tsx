@@ -2,6 +2,14 @@ import React from 'react'
 
 export default function Admin() {
   return (
-    <div>Admin</div>
+    <section className="">
+      <article className="pt-16">
+        <h2>Admin Page</h2>
+        <div></div>
+        <ul>
+          
+        </ul>
+      </article>
+    </section>
   )
 }

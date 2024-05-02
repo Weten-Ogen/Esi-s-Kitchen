@@ -2,6 +2,8 @@ import Image from "next/image";
 import DropDown from "../custom/navdropdown";
 import NavLinks from "../custom/navlinks";
 import Logo2 from '@/public/logo2.png'
+import AvaTar from "../custom/avaatar";
+
 
 export default function NavBar() {
 
@@ -18,7 +20,9 @@ export default function NavBar() {
               />
             </NavLinks>
         </header>
-        <div className="flex items-center justify-center gap-4">
+        <div className="flex items-center  gap-2">
+        <AvaTar name="Marcus" className=""
+        />
           <ul className="hidden md:flex items-center gap-3 text-orange-400 " >
             <NavLinks
              name="home" 

@@ -2,11 +2,11 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
- 
+
 generator client {
   provider = "prisma-client-js"
 }
- 
+
 model User {
   id            String          @id @default(cuid())
   name          String?
@@ -19,15 +19,16 @@ model User {
   sessions      Session[]
   // Optional for WebAuthn support
   Authenticator Authenticator[]
- 
+
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
- 
+
 enum Role {
   USER
   ADMIN
 }
+
 model Account {
   userId            String
   type              String
@@ -40,33 +41,33 @@ model Account {
   scope             String?
   id_token          String?
   session_state     String?
- 
+
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
- 
+
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
- 
+
   @@id([provider, providerAccountId])
 }
- 
+
 model Session {
   sessionToken String   @unique
   userId       String
   expires      DateTime
   user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
- 
+
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
- 
+
 model VerificationToken {
   identifier String
   token      String
   expires    DateTime
- 
+
   @@id([identifier, token])
 }
- 
+
 // Optional for WebAuthn support
 model Authenticator {
   id                   String  @id @default(cuid())
@@ -78,36 +79,47 @@ model Authenticator {
   credentialDeviceType String
   credentialBackedUp   Boolean
   transports           String?
- 
+
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
 model Packages {
-  id      String  @id  @default(cuid())
-  name    String
-  items   String[] 
-  price   Int
-  imageurl String 
+  id        String   @id @default(cuid())
+  name      String
+  items     String[]
+  price     Int
+  imageurl  String
   serviceId String
-  service Services @relation(fields: [id],references: [id],onDelete: Cascade)
+  service   Services @relation(fields: [id], references: [id], onDelete: Cascade)
 }
 
 model Services {
-  id      String  @id @default(cuid())
-  name    String
-  content String
+  id       String     @id @default(cuid())
+  name     String
+  content  String
   packages Packages[]
 }
+
 model Booking {
-  id      String @id @default(cuid())
-  name    String
-  email   String? 
-  contact Int
-  tel     Int?
-  date    String
-  time    String
-  venue   String
+  id        String  @id @default(cuid())
+  name      String
+  email     String?
+  contact   Int
+  status    Status  @default(PENDING)
+  tel       Int?
+  date      String
+  time      String
+  venue     String
   occassion String
-  userId String
-  user User @relation(fields: [userId],references: [id],onDelete: Cascade) 
+  userId    String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  user      User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+enum Status {
+  PENDING
+  COMPLETED
+  CANCELED
+  REJECTED
 }

@@ -29,7 +29,7 @@ export default function Bookings() {
           />
         </div>
       </article>
-      <div className=" md:h-screen  grid grid-cols-1 md:grid-cols-3 gap-4 my-5">
+      <div className=" p-4 md:p-0  grid grid-cols-1 md:grid-cols-3 gap-4 my-5">
           <ServiceCard 
           reff="/bookings/buffet"
           name="buffet service"

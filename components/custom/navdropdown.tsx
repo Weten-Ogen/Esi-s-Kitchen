@@ -10,7 +10,9 @@ export default function DropDown({className}:dropdown) {
   return (
     <DropdownMenu >
       <DropdownMenuTrigger>
-            <Menu className='text-orange-500 font-bold text-2xl'/>
+            <Menu
+            size={30} 
+            className='text-orange-500  font-bold '/>
       </DropdownMenuTrigger>
       <DropdownMenuContent  className="">
         <DropdownMenuLabel className='font-bold text-lg text-orange-500 tracking-wider whitespace-normal'>Esi's kitchen</DropdownMenuLabel>

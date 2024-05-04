@@ -12,7 +12,7 @@ import Footer from '@/components/general/footer';
 export default function About() {
   return (
     <section className ="">
-        <article className='h-screen w-full relative  mt-16 '>
+        <article className='h-screen w-full relative  pt-16 '>
             <div className=" flex flex-col items-center w-full ">
                 {/* hero for dashboard */}
                 <div className='w-40'>
@@ -21,7 +21,7 @@ export default function About() {
                     height={100}
                     alt="logo image"
                     src={Logo}
-                    className ='w-full'
+                    className ='w-full object-cover'
                     />
                 </div>
                 <div className='w-full h-[50vh] rounded-sm overflow-hidden'>
@@ -30,7 +30,7 @@ export default function About() {
                     alt="full option"
                     width={500}
                     height={500}
-                    className="mx-auto  rounded-sm"
+                    className="mx-auto  rounded-sm object-cover"
                     />
                 </div>
                 <div className="">
@@ -42,9 +42,9 @@ export default function About() {
             </div>
         </article>    
         {/* second tab */}
-        <article className="relative md:h-screen grid grid-cols-1 md:grid-cols-2 grid-rows-2  gap-4 overflow-hidden">
+        <article className="grid  grid-cols-1 relative md:grid-cols-2 col-span-2  gap-2 mt-5">
             <div className="">
-                <ul className="absolute -top-10 left-0 bg-primecolor px-6 py-2 text-bgcolor text-lg uppercase bg-blend-darken rounded-l-lg ">
+                <ul className="absolute top-0 left-0 bg-primecolor px-6 py-2 text-bgcolor text-lg uppercase bg-blend-darken rounded-r-lg ">
                     <p>we serve</p>
                     <p>we cook</p>
                     <p>you enjoy</p>
@@ -67,16 +67,16 @@ export default function About() {
                     <p>
                     We  can provide a wide variety of menus and styles to fit  your specific needs. We also offer the best of cartering  services, including traditional  weddings,food and beverags, buffet services and custom menu designed  to suit your request.
                     </p>
-            </div>
+                </div>
             
-            <div className='max-w-lg text-lg font-bold  text-secondcolor tracking-widest text-clip whitespace-normal  text-center p-4 flex flex-col-reverse my-3'>
-                <p className='bg-gradient-to-tr from-orange-500 to-orange-400 p-2 via-secondcolor text-white font-bold'>
+            <div className='max-w-lg text-lg font-bold  text-secondcolor tracking-widest text-clip whitespace-normal from-orange-500 bg-gradient-to-l to-orange-400 p-2 via-secondcolor  text-center   my-2'>
+                <p className=' p-2 via-secondcolor text-white font-bold'>
                 we keep an oustanding  reputation for<br/> execellence in weddings, catering,<br/> corporate catering , holiday party <br/>catering and so much more.<br/>
                 we will be very happy to work with you. 
                 </p> 
             </div>
             <div className="">
-                <ul className="absolute bottom-0 md:-bottom-20 right-0 bg-primecolor px-6 py-2 text-bgcolor text-lg uppercase bg-blend-darken rounded-l-lg ">
+                <ul className="absolute bottom-0  right-0 bg-primecolor px-6 py-2 text-bgcolor text-lg uppercase bg-blend-darken rounded-l-lg ">
                     <p>we serve</p>
                     <p>we cook</p>
                     <p>you enjoy</p>
@@ -92,10 +92,10 @@ export default function About() {
             </div>
         </article>
         {/* third article */}
-        <article className="relative  grid md:h-screen grid-cols-1 md:grid-cols-2  gap-4 mt-5 overflow-hidden">
+        <article className="relative  grid md:h-screen grid-cols-1 md:grid-cols-2  cols-span-2 gap-4  overflow-hidden">
         
             <div className="">
-                <ul className="absolute -top-10 left-0 bg-primecolor px-6 py-2 text-bgcolor text-lg uppercase bg-blend-darken rounded-l-lg ">
+                <ul className="absolute top-0 left-0 bg-primecolor px-6 py-2 text-bgcolor text-lg uppercase bg-blend-darken rounded-r-lg ">
                     <p>we serve</p>
                     <p>we cook</p>
                     <p>you enjoy</p>
@@ -109,25 +109,17 @@ export default function About() {
                     height={500}/>
                 </div>
             </div>
-                <div className="max-w-lg text-lg  text-clip font-medium text-justify p-4 tracking-wide whitespace-normal">
-                    <p className='mb-3'>
-                    At Esi's Kitchen , we pride ourselves in providing  high quality food and services to our clients. Our team is experienced  and qualified  to handle any catering needs you may have. 
-
-                    We can provide  a wide variety of menus and styles to fit your specific needs you may have .
-                    </p>
-                    <p>
-                    We  can provide a wide variety of menus and styles to fit  your specific needs. We also offer the best of cartering  services, including traditional  weddings,food and beverags, buffet services and custom menu designed  to suit your request.
-                    </p>
+            <div className="max-w-md  text-xl  text-clip font-medium text-center from-orange-500 bg-gradient-to-l to-orange-400  via-secondcolor p-4 tracking-wide whitespace-normal">
+            <p>we speacialize in budget friendly catering & event planning services</p>    
             </div>
-            
-            <div className='max-w-lg text-lg font-bold  text-secondcolor tracking-widest text-clip whitespace-normal  text-center p-4 flex flex-col-reverse my-3'>
-                <p className='bg-gradient-to-tr from-orange-500 to-orange-400 p-2 via-secondcolor text-white font-bold'>
-                we keep an oustanding  reputation for<br/> execellence in weddings, catering,<br/> corporate catering , holiday party <br/>catering and so much more.<br/>
-                we will be very happy to work with you. 
-                </p> 
+            <div className='max-w-lg text-lg font-bold  text-slate-800 tracking-wider text-clip whitespace-normal text-justify  p-4 from-orange-500 to-orange-400 '>
+            <p className="">
+                        Thank you for choosing us, to the right is a list of our packages.Kindly glance through and  select your preferred package.
+                    </p>
+                
             </div>
             <div className="">
-                <ul className="absolute bottom-0 md:-bottom-20 right-0 bg-primecolor px-6 py-2 text-bgcolor text-lg uppercase bg-blend-darken rounded-l-lg ">
+                <ul className="absolute bottom-0  right-0 bg-primecolor px-6 py-2 text-white text-lg uppercase bg-blend-darken rounded-l-lg ">
                     <p>we serve</p>
                     <p>we cook</p>
                     <p>you enjoy</p>

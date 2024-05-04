@@ -7,7 +7,15 @@ import {
     getPaginationRowModel,
     useReactTable,
 } from '@tanstack/react-table';
-import { Table,TableBody,TableCell,TableHead,TableHeader,TableRow } from '@/components/ui/table';
+import { 
+    Table,
+    TableBody,
+    TableCell,
+    TableHead,
+    TableHeader,
+    TableRow 
+} from '@/components/ui/table';
+import { Button } from './button';
 
 interface DataTableProps<TData,TValue> {
     columns: ColumnDef<TData,TValue>[]
@@ -22,8 +30,14 @@ export default function DataTable<TData,TValue>({columns,data}:DataTableProps<TD
         getPaginationRowModel: getPaginationRowModel(),
     })
   return (
-    <div>
-        <Table>
+    <div className="relative">
+        <div className="flex items-center justify-between ">
+            <Button disabled={table.getCanPreviousPage()} 
+            onClick={()=> table.previousPage()}>previous</Button>
+            <Button disabled={table.getCanNextPage()} onClick={()=> table.nextPage()}>next</Button>
+
+        </div>
+        <Table className="border">
             <TableHeader>
                 {
                     table.getHeaderGroups().map((headerGroup) => (<TableRow    key={headerGroup.id}>

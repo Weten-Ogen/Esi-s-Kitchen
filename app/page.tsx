@@ -12,9 +12,9 @@ import NavLinks from "@/components/custom/navlinks";
 
 export default function Home() {
   return (
-    <section className="scroll-smooth mt-20 md:mt-0">
-        {/* hero section */}
-        <article className="h-screen grid grid-cols-1   md:grid-cols-2 overflow-hidden  gap-2 justify-center items-center">
+    <section className="scroll-smooth pt-20 md:pt-10">
+        {/* hero section */} 
+        <article className="h-screen grid grid-cols-1   md:grid-cols-2 overflow-hidden  gap-4 justify-center items-center">
           <div className="">
             <div className="">
               {/* image start here */}
@@ -57,7 +57,7 @@ export default function Home() {
         </article>
 
         {/*story*/}
-        <article className="h-screen overflow-hidden bg-gradient-to-r grid grid-cols-1 from-orange-600 to-bg-primecolor gap-2">
+        <article className="h-screen overflow-hidden bg-gradient-to-r grid grid-cols-1 from-orange-600 to-bg-primecolor gap-4">
             <div className="p-4">
               <h2 className="font-bold uppercase text-2xl ">our story</h2>
               <p className="text-lg tracking-wide whitespace-normal max-w-lg text-justify md:max-w-3xl text-clip font-medium/8 mt-4 px-2">Hello from Esi's Kitchen. We are a group of chefs and cooks who like making delicious and personnalized food for meaningful moments such as  weddings, engagements and other milestone parties.</p>
@@ -66,11 +66,11 @@ export default function Home() {
                 We do deliveries in all suburbs of Greater Accra. 
               </p>
             </div>
-          <div className="w-full  overflow-hidden">
+          <div className="w-full   object-contain overflow-hidden">
             <Image
             alt="story pic"
             src={Pic2}
-            className="w-full "
+            className="w-full object-cover"
             width={500}
             height={500}
             />

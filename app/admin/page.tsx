@@ -1,6 +1,8 @@
+import { prisma } from '@/lib/prisma'
 import React from 'react'
 
-export default function Admin() {
+export default async function Admin() {
+  
   return (
     <section className="">
       <article className="pt-16">

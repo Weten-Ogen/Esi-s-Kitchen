@@ -5,7 +5,10 @@ import { Button } from '../ui/button'
 export default function SignOutBtn() {
   return (
     <form action={googleSignOut}>
-        <Button type="submit">log out</Button>
+        <Button
+        className='tracking-wide text-lg cap' 
+        variant={"outline"} 
+        type="submit">log out</Button>
     </form>
   )
 }

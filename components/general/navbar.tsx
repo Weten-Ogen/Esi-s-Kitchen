@@ -36,7 +36,8 @@ export default function NavBar() {
             <DropDown/>
 
             <AvaTar 
-            name="Marcus" 
+            image={session.data?.user?.image}
+            name={session.data?.user?.name} 
             className="m-2"
           />
 

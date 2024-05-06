@@ -53,8 +53,8 @@ interface singlebook {
 }
 
 interface avaatar{
-    imageurl?:string,
-    name:string,
+    imageurl?:string | null | undefined,
+    name?:string  | null  | undefined,
     className?:string,
 
 }

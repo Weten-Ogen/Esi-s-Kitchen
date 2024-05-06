@@ -6,6 +6,7 @@ import { Menu } from 'lucide-react'
 import { DropdownMenuLabel } from '@radix-ui/react-dropdown-menu'
 import { cn } from '@/lib/utils'
 import NavLinks from './navlinks'
+import SignOutBtn from './signout'
 
 
 export default function DropDown({className}:dropdown) {
@@ -39,6 +40,10 @@ export default function DropDown({className}:dropdown) {
           
           <DropdownMenuItem className='text-lg tracking-wider whitespace-normal'>
             <NavLinks name="admin" reff="/admin" className=''/>
+          </DropdownMenuItem>
+          <DropdownMenuSeparator/>
+          <DropdownMenuItem className='text-lg tracking-wider whitespace-normal'>
+            <SignOutBtn/>
           </DropdownMenuItem>
         </DropdownMenuRadioGroup>
       </DropdownMenuContent>

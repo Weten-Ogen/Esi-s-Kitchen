@@ -1,12 +1,17 @@
+"use client"
 import Image from "next/image";
 import DropDown from "../custom/navdropdown";
 import NavLinks from "../custom/navlinks";
 import Logo2 from '@/public/logo2.png'
 import AvaTar from "../custom/avaatar";
 import { Clipboard, ClipboardCheck, Home,Server,ShoppingBag,ShoppingCart, Users } from "lucide-react";
+import { useSession } from "next-auth/react";
+import SignInBtn from "../custom/signin";
+
 
 
 export default function NavBar() {
+  const session = useSession();
 
   return (
     <nav className="flex justify-between gap-4 items-center  fixed w-full top-0 z-20 bg-slate-900 md:px-6">
@@ -22,15 +27,22 @@ export default function NavBar() {
             </NavLinks>
         </header>
      
-        
-        <div className="flex items-center  ml-auto">
-          <DropDown/>
+        <>
+        {
+          !session.data?.user ? 
+          <SignInBtn/>
+           :
+          <div className="flex items-center  ml-auto">
+            <DropDown/>
 
-          <AvaTar 
-          name="Marcus" 
-          className="m-2"
-        />
-        </div>
+            <AvaTar 
+            name="Marcus" 
+            className="m-2"
+          />
+
+          </div>
+        }
+        </>
 
   
     </nav>

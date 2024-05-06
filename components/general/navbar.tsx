@@ -21,52 +21,11 @@ export default function NavBar() {
               />
             </NavLinks>
         </header>
-        <div className="flex items-center justify-around gap-8 md:hidden text-white "> 
-        <NavLinks reff="/">
-          <Home 
-          className="" 
-          size={25}
-          />
-        </NavLinks>
-        <NavLinks reff="/about">
-          <Users 
-          className="" 
-          size={25}
-           />
-        </NavLinks>
-        <NavLinks reff="/bookings">
-          <ClipboardCheck 
-          className="" 
-          size={25}
-          />
-      
-        </NavLinks>
-        <NavLinks reff="/admin">
-          <Server size={25}/>
-        </NavLinks>
-        </div>
-        <div className="flex items-center  ml-auto">
+     
         
-          <ul className="hidden md:flex items-center gap-6 text-secondcolor " >
-            <NavLinks
-             name="home" 
-            reff="/" className="capitalize text-lg opacity-70 hover:opacity-90   ease-out duration-500  hover:-translate-y-0.5  tracking-wider "/>
-            <NavLinks
-             name="about" 
-            reff="/about" className="capitalize text-lg opacity-70 hover:opacity-90   ease-out duration-500  hover:-translate-y-0.5  tracking-wider "/>
-            <NavLinks
-             name="bookings" 
-            reff="/bookings" 
-            className="capitalize text-lg opacity-70 hover:opacity-90   ease-out duration-500  hover:
-            -translate-y-0.5  tracking-wider "/>
-            <NavLinks
-             name="admin" 
-            reff="/admin" className="capitalize text-lg opacity-70 hover:opacity-90   ease-out duration-500  hover:-translate-y-0.5  t
-            racking-wider "/>
-            
-            
-          </ul>
-          
+        <div className="flex items-center  ml-auto">
+          <DropDown/>
+
           <AvaTar 
           name="Marcus" 
           className="m-2"

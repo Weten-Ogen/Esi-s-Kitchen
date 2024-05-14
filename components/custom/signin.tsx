@@ -1,5 +1,5 @@
 "use client"
-import { googleSignIn} from "@/app/actions"
+import { googleSignIn} from "@/app/actions/actions"
 
  
 export default  function SignInBtn() {

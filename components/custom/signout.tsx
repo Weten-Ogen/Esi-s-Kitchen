@@ -1,7 +1,7 @@
 "use client"
 import React from 'react'
 import { Button } from '../ui/button'
-import { googleSignOut } from '@/app/actions'
+import { googleSignOut } from '@/app/actions/actions'
 
 
 export default function SignOutBtn() {

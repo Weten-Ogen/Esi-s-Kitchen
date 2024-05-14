@@ -2,8 +2,7 @@
 import { googleSignIn} from "@/app/actions"
 
  
-export default function SignInBtn() {
-
+export default  function SignInBtn() {
   return (
     <form
       action={googleSignIn}

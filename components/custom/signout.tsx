@@ -1,15 +1,13 @@
 "use client"
 import React from 'react'
 import { Button } from '../ui/button'
-import {  signOut } from 'next-auth/react';
+import { googleSignOut } from '@/app/actions'
+
 
 export default function SignOutBtn() {
-  async function signoutact (){
-    'use server'
-      await signOut()
-  }
+
   return (
-    <form action={signoutact}> 
+    <form action={googleSignOut}> 
 
       <Button
 

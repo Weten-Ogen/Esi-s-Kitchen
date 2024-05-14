@@ -4,7 +4,7 @@ import { PrismaAdapter } from '@auth/prisma-adapter'
  import prisma from './lib/prisma';
 
 export const  {
-    handlers:{GET,POST},
+    handlers:{GET, POST},
     auth,
     signIn,
     signOut,

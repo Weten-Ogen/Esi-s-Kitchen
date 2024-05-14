@@ -5,13 +5,15 @@ import { signIn, signOut } from "@/auth"
 
 export async function googleSignIn(formData:FormData) {
 
-     return await signIn("google",{redirectTo: "/bookings"});
+     await signIn("google",{redirectTo: "/bookings"});
+     return
      
 }
 
 
 export async function googleSignOut() {
-    return await signOut();
+    await signOut();
+    return;
     
 }
 

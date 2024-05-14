@@ -1,13 +1,14 @@
 
 import { signIn } from "@/auth"
  
-export function SignIn() {
+export default function SignInBtn() {
+  async function signInaction () {
+    'use server'
+    await signIn("google")
+  }
   return (
     <form
-      action={async () => {
-        "use server"
-        await signIn("google")
-      }}
+      action={signInaction}
     >
       <button type="submit">log in</button>
     </form>

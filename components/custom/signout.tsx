@@ -4,11 +4,12 @@ import { Button } from '../ui/button'
 import {  signOut } from 'next-auth/react';
 
 export default function SignOutBtn() {
-  return (
-    <form action={async() => {
-      'use server'
+  async function signoutact (){
+    'use server'
       await signOut()
-    }}> 
+  }
+  return (
+    <form action={signoutact}> 
 
       <Button
 

@@ -8,7 +8,6 @@ export default function SignOutBtn() {
 
   return (
     <form action={googleSignOut}> 
-
       <Button
 
       className='tracking-wide text-lg cap' 

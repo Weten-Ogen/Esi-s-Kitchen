@@ -1,13 +1,10 @@
-
+"use client"
 import React from 'react';
 import { Button } from '../ui/button';
-import { googleSignIn } from '@/app/actions';
+import { signIn } from 'next-auth/react';
 
 export default function SignInBtn() {
   return (
-    <form 
-    action={googleSignIn}>
-      <Button type="submit">log in</Button>
-    </form>
+    <Button onClick={async() => await signIn("google")}>log in</Button>
   )
 }

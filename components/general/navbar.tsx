@@ -4,7 +4,6 @@ import DropDown from "../custom/navdropdown";
 import NavLinks from "../custom/navlinks";
 import Logo2 from '@/public/logo2.png'
 import AvaTar from "../custom/avaatar";
-import { Clipboard, ClipboardCheck, Home,Server,ShoppingBag,ShoppingCart, Users } from "lucide-react";
 import { useSession } from "next-auth/react";
 import SignInBtn from "../custom/signin";
 

@@ -1,15 +1,15 @@
 import { withNextVideo } from "next-video/process";
-
+import { hostname } from "os";
 /** @type {import('next').NextConfig} */
 
 const nextConfig = {
     images: {
-        remotePatterns: {
+        remotePatterns: [{
             protocol: "https",
             hostname: "lh3.googleusercontent.com",
             port: "",
-            pathname:"/a/**",
-        }
+            pathname:"/a/**"}]
+        
     }
 };
 

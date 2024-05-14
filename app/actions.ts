@@ -4,7 +4,7 @@
 import { signIn, signOut } from "@/auth"
 
 export async function googleSignIn() {
-    return signIn("google", {redirectTo:"/bookings"});
+    return signIn("google");
 }
 
 

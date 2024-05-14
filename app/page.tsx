@@ -1,5 +1,5 @@
 import Image from "next/image";
-import    Pic2   from "@/public/images/serveself.jpg"
+import   Pic2   from "@/public/images/serveself.jpg"
 import Pic1 from '@/public/images/buffet.jpg'
 import Btn from "@/components/general/btn";
 import ServiceCard from "@/components/custom/servicecard";

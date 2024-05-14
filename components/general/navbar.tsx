@@ -10,7 +10,7 @@ import SignInBtn from "../custom/signin";
 
 
 export default function NavBar() {
-  const session = useSession();
+  
 
   return (
     <nav className="flex justify-between gap-4 items-center  fixed w-full top-0 z-20 bg-slate-900 md:px-6">
@@ -27,7 +27,7 @@ export default function NavBar() {
         </header>
      
         <>
-        {
+        {/* {
           !session.data?.user ? 
           <SignInBtn/>
            :
@@ -41,7 +41,7 @@ export default function NavBar() {
           />
 
           </div>
-        }
+        } */}
         </>
 
   

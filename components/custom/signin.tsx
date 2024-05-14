@@ -1,5 +1,6 @@
 "use client"
 import { googleSignIn} from "@/app/actions/actions"
+import { Button } from "../ui/button"
 
  
 export default  function SignInBtn() {
@@ -7,7 +8,7 @@ export default  function SignInBtn() {
     <form
       action={googleSignIn}
     >
-      <button type="submit">log in</button>
+      <Button type="submit">log in</Button>
     </form>
   )
 } 

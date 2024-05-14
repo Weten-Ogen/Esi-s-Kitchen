@@ -1,17 +1,15 @@
-"use client"
-import React from 'react';
-import { Button } from '../ui/button';
-import { signIn } from 'next-auth/react';
 
-export default function SignInBtn() {
+import { signIn } from "@/auth"
+ 
+export function SignIn() {
   return (
-    <form action={async() => {
-      'use server'
-      await signIn('google',{redirectedTo:'/bookings'})
-    }}>
-      <Button
-      variant={'outline'} 
-      type='submit'>log in</Button>
+    <form
+      action={async () => {
+        "use server"
+        await signIn("google")
+      }}
+    >
+      <button type="submit">log in</button>
     </form>
   )
-}
+} 

@@ -4,11 +4,13 @@
 import { signIn, signOut } from "@/auth"
 
 export async function googleSignIn() {
-    return await signIn("google");
+     await signIn("google");
+     return
 }
 
 
 export async function googleSignOut() {
-    return  await signOut();
+    await signOut();
+    return 
 }
 

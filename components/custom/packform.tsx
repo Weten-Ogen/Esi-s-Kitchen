@@ -1,5 +1,5 @@
 "use client"
-import React from 'react'
+import React, { useRef } from 'react'
 import { useForm } from 'react-hook-form'
 import * as z  from 'zod'
 import {zodResolver} from '@hookform/resolvers/zod'
@@ -7,6 +7,7 @@ import { Form, FormField,FormItem,FormLabel,FormMessage,FormControl } from '../u
 import { Input } from '../ui/input'
 import {Button} from '../ui/button'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../ui/select'
+
 
 
 
@@ -18,30 +19,28 @@ const formSchema =  z.object({
     tel:z.string().optional(),
     date:z.string().date(),
     time:z.string(),
-    occassion:z.string(),
     package:z.string(),
-    population:z.number().min(200)
-
+    occassion:z.string(),
+    population:z.coerce.number()
 })
 
 
 export default function PackForm() {
+    const formRef = useRef()
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues:{
             name:"",
             email:"",
-            population:100,
+            population:200,
         }
     })
 
-    const handlesubmit = () => {
-               
-    }
+    const handlesubmit =async (values:z.infer<typeof formSchema>) => console.log(values)
 
   return (
     <Form {...form} >
-        <form onSubmit={form.handleSubmit(handlesubmit)}
+        <form  onSubmit={form.handleSubmit(handlesubmit)}
         >
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-2">
 
@@ -51,7 +50,7 @@ export default function PackForm() {
                     <FormItem>
                         <FormLabel className="text-lg text-white tracking-wider text-clip whitespace-normal" >
                             name
-                        </FormLabel>
+                        </FormLabel>f
                         <FormControl>
                             <Input 
 
@@ -204,7 +203,7 @@ export default function PackForm() {
                             <FormControl>
                                 <Input 
                                 placeholder="venue or location"
-                                className=""
+                                type='text'
                                 {...field}
                                 />
                             </FormControl>  
@@ -215,6 +214,7 @@ export default function PackForm() {
                 }}
             />
     </div>
+    
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 ">
 
                     <FormField  control={form.control} name="package" 
@@ -251,7 +251,9 @@ export default function PackForm() {
                             <FormLabel className="text-lg text-white tracking-wider text-clip whitespace-normal">number per head</FormLabel>
                             <FormControl>
                                 <Input 
-                                placeholder="100"
+                                placeholder='placeholder'
+                                type='number'
+                                min={200}
                                 className=""
                                 {...field}
                                 />
@@ -262,6 +264,7 @@ export default function PackForm() {
                 }}
             />
     </div>
+
     <div className="w-full my-4">
         <Button  className="w-full bg-secondcolor text-xl uppercase whitespace-normal tracking-wider hover:bg-secondcolor opacity-80 hover:opacity-100 ease-out duration-500" type="submit">
             submit

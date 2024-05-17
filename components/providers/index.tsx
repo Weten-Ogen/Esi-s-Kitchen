@@ -6,7 +6,7 @@ import {SessionProvider} from 'next-auth/react'
 export default function AppProvider({children}:providers) {
   return (
     <>
-    <SessionProvider>
+    <SessionProvider >
     <NavBar/>
     <main className="md:w-[80%] md:mx-auto ">
         {children}

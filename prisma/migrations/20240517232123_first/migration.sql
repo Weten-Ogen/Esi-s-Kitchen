@@ -92,7 +92,7 @@ CREATE TABLE "Services" (
 );
 
 -- CreateTable
-CREATE TABLE "Booking" (
+CREATE TABLE "Bookings" (
     "id" TEXT NOT NULL,
     "name" TEXT NOT NULL,
     "email" TEXT,
@@ -107,7 +107,7 @@ CREATE TABLE "Booking" (
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,
 
-    CONSTRAINT "Booking_pkey" PRIMARY KEY ("id")
+    CONSTRAINT "Bookings_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateIndex
@@ -132,4 +132,4 @@ ALTER TABLE "Authenticator" ADD CONSTRAINT "Authenticator_userId_fkey" FOREIGN K
 ALTER TABLE "Packages" ADD CONSTRAINT "Packages_id_fkey" FOREIGN KEY ("id") REFERENCES "Services"("id") ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "Booking" ADD CONSTRAINT "Booking_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE "Bookings" ADD CONSTRAINT "Bookings_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE CASCADE ON UPDATE CASCADE;

@@ -10,7 +10,7 @@ import SignInBtn from "../custom/signin";
 
 
 export default function NavBar() {
-  const session = useSession();
+  const {data} = useSession();
 
   return (
     <nav className="flex justify-between gap-4 items-center  fixed w-full top-0 z-20 bg-slate-900 md:px-6">
@@ -28,15 +28,15 @@ export default function NavBar() {
      
         <>
         {
-          !session.data?.user ? 
+          !data ? 
           <SignInBtn/>
            :
           <div className="flex items-center  ml-auto">
             <DropDown/>
 
             <AvaTar 
-            imageurl={session.data?.user?.image}
-            name={session.data?.user?.name} 
+            imageurl={data?.user?.image}
+            name={data?.user?.name} 
             className="m-2"
           />
 

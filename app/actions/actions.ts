@@ -2,17 +2,18 @@
 
 
 import { signIn, signOut } from "@/auth"
+import { revalidatePath } from "next/cache";
 
 export async function googleSignIn(formData:FormData) {
 
      await signIn("google",{redirectTo: "/bookings"});
-     return
+     revalidatePath('/')
      
 }
 
 
 export async function googleSignOut() {
-    await signOut();
+    await signOut({redirectTo:"/"});
     return;
     
 }

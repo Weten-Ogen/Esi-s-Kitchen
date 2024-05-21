@@ -1,5 +1,5 @@
 "use client"
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import * as z  from 'zod'
 import {zodResolver} from '@hookform/resolvers/zod'
@@ -7,6 +7,7 @@ import { Form, FormField,FormItem,FormLabel,FormMessage,FormControl } from '../u
 import { Input } from '../ui/input'
 import {Button} from '../ui/button'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../ui/select'
+import { Loader } from 'lucide-react'
 
 
 
@@ -26,7 +27,8 @@ const formSchema =  z.object({
 
 
 export default function PackForm() {
-    const formRef = useRef()
+    const [loading,setLoading] = useState(false)
+    const formRef = useRef<HTMLFormElement | null>(null)
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues:{
@@ -36,21 +38,38 @@ export default function PackForm() {
         }
     })
 
-    const handlesubmit =async (values:z.infer<typeof formSchema>) => console.log(values)
+    const handlesubmit =async (values:z.infer<typeof formSchema>) => {
+        setLoading(prev => !prev)
+        await fetch('/api/form', {
+            method:'POST',
+            headers:{'Content-Type':"application/json"},
+            body:JSON.stringify(values)
+        })
+        setLoading(false)
+    }
 
   return (
     <Form {...form} >
-        <form  onSubmit={form.handleSubmit(handlesubmit)}
-        >
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-2">
 
+        <form ref={formRef} onSubmit={form.handleSubmit(handlesubmit)}
+        >
+        {
+            loading ? 
+            <div className="flex items-center justify-center p-24 ">
+                <Loader className="text-2xl text-secondcolor animate-spin " size={100}/> 
+            </div>
+            
+            : 
+            
+            <>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-2">        
         <FormField  control={form.control} name="name" 
             render={({field}) => {
                 return (
                     <FormItem>
                         <FormLabel className="text-lg text-white tracking-wider text-clip whitespace-normal" >
                             name
-                        </FormLabel>f
+                        </FormLabel>
                         <FormControl>
                             <Input 
 
@@ -271,6 +290,10 @@ export default function PackForm() {
         </Button>
     </div>
 
+
+            </>
+        }
+    
         </form>
 
     </Form>

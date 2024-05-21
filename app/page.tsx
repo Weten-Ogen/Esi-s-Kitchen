@@ -9,8 +9,10 @@ import Test2 from "@/public/testimonial/testmo2.jpg";
 import Test3 from "@/public/testimonial/testmo3.jpg";
 import Footer from "@/components/general/footer";
 import NavLinks from "@/components/custom/navlinks";
+import { wait } from "@/lib/utils";
 
-export default function Home() {
+export default async function Home() {
+  await wait(1000)
   return (
     <section className="scroll-smooth pt-20 md:pt-10">
         {/* hero section */} 

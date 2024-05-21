@@ -7,11 +7,13 @@ import Special from '@/public/products/friedrice.jpg'
 import Heritage from '@/public/products/yam.jpg'
 import Premium from '@/public/images/redpack.jpg'
 import Standard from '@/public/products/pizza.jpg'
+import { wait } from '@/lib/utils';
 
 
 
-export default function SingleBooking({params}:singlebook) {
-  const {service} = params;
+export default async function SingleBooking({params}:singlebook) {
+  const {service} = await  params;
+  await wait(1000)
   return (
     <section className=" ">
       <article className="pt-24 m-h-screen">

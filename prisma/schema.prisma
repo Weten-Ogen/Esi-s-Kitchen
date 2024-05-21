@@ -104,9 +104,9 @@ model Bookings {
   id        String  @id @default(cuid())
   name      String
   email     String?
-  contact   Int
+  contact   String
   status    Status  @default(PENDING)
-  tel       Int?
+  tel       String?
   date      String
   time      String
   venue     String

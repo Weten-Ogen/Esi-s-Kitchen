@@ -104,6 +104,7 @@ CREATE TABLE "Bookings" (
     "venue" TEXT NOT NULL,
     "occassion" TEXT NOT NULL,
     "userId" TEXT NOT NULL,
+    "population" INTEGER NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,
 

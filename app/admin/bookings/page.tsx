@@ -1,7 +1,12 @@
+import prisma from '@/lib/prisma'
 import React from 'react'
 
-export default function AdminBookings() {
+export default async function AdminBookings(){
+   const bookings = await  prisma.bookings.findMany({})
+   console.log(bookings)
   return (
-    <div>AdminBookings</div>
+    <section>
+
+    </section>
   )
 }

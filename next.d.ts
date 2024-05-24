@@ -69,7 +69,7 @@ interface testicard {
     className:string,    
 }
 
-interface bookdata {
+interface bookdata  {
     name:string,
     email:string,
     contact:string,

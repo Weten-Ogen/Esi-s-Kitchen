@@ -16,7 +16,7 @@ model User {
   emailVerified DateTime?
   image         String?
   role          Role            @default(USER)
-  booking       Bookings[]
+  booking       Booking[]
   accounts      Account[]
   sessions      Session[]
   // Optional for WebAuthn support
@@ -84,24 +84,24 @@ model Authenticator {
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
-model Packages {
+model Package {
   id        String   @id @default(cuid())
   name      String
   items     String[]
   price     Int
   imageurl  String
   serviceId String
-  service   Services @relation(fields: [id], references: [id], onDelete: Cascade)
+  service   Service @relation(fields: [id], references: [id], onDelete: Cascade)
 }
 
-model Services {
+model Service {
   id       String     @id @default(cuid())
   name     String
   content  String
-  packages Packages[]
+  packages Package[]
 }
 
-model Bookings {
+model Booking {
   id         String   @id @default(cuid())
   name       String
   email      String?

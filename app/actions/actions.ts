@@ -2,8 +2,24 @@
 
 
 import { signIn, signOut } from "@/auth"
+import { value } from "@/components/custom/packform";
+import prisma from "@/lib/prisma";
+import { bookdata } from "@/next";
 import { revalidatePath } from "next/cache";
+import { redirect } from "next/navigation";
 
+
+export async function appointment (newdata:value){
+    const midata = newdata
+    await prisma.booking.create(
+        {
+            data:midata
+        }
+    )
+    revalidatePath("/admin/bookings")
+    redirect("/admin/bookings")
+
+}
 export async function googleSignIn(formData:FormData) {
 
      await signIn("google",{redirectTo: "/bookings"});
@@ -19,51 +35,3 @@ export async function googleSignOut() {
     
 }
 
-
-// get functions 
-export  async function  getUsers(formData:FormData){
-
-}
-
-export  async function  getBookings(formData:FormData){
-
-}
-export  async function  getPackages(formData:FormData){
-
-}
-export  async function  getServices(formData:FormData){
-
-}
-
-
-// single queries on get functions
-export async function getUserById(formData:FormData) {
-
-}
-
-export async function getServiceById(formData:FormData) {
-    
-}
-
-export async function getBookingById(formData:FormData) {
-
-}
-
-export async function  getPackageById(formData:FormData) {
-
-}
-
-interface data {
-    name : string,
-    tel : number,
-    contact:number,
-    date: Date,
-    time: string,
-    ocassion:string,
-    venue:string,
-    package:string,
-    population:number
-    
-
-}
-// submit booking

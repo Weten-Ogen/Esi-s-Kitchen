@@ -5,7 +5,7 @@ export default async function AdminBookings(){
    const bookings = await  prisma.bookings.findMany({})
    
   return (
-    <section>
+    <section className="pt-20  ">
       <div>{JSON.stringify(bookings)}</div>
     </section>
   )

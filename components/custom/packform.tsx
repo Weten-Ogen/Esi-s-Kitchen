@@ -1,5 +1,5 @@
 "use client"
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import * as z  from 'zod'
 import {zodResolver} from '@hookform/resolvers/zod'
@@ -45,6 +45,7 @@ export default function PackForm() {
             headers:{'Content-Type':"application/json"},
             body:JSON.stringify(values)
         })
+        form.reset()
         setLoading(false)
     }
 

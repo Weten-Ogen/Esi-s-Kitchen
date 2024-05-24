@@ -6,8 +6,7 @@ import Footer from '@/components/general/footer'
 import { wait } from '@/lib/utils'
 
 
-export  default async function Bookings() {
-  await wait(1000)
+export  default async function Bookings(){
   return (
     <section className='mt-20'>
       <article className="grid grid-cols-1 md:grid-cols-2 overflow-hidden md:h-[70vh]">

@@ -69,3 +69,15 @@ interface testicard {
     className:string,    
 }
 
+interface bookdata {
+    name:string,
+    email:string,
+    contact:string,
+    venue:string,
+    tel?:string | null,
+    date:string,
+    time:string,
+    package:string,
+    occassion:string,
+    population:number
+}

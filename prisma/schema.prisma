@@ -1,10 +1,11 @@
 datasource db {
-  provider = "postgresql"
-  url = env("POSTGRES_PRISMA_URL")
-  directUrl = env("POSTGRES_URL_NON_POOLING") 
+  provider  = "postgresql"
+  url       = env("POSTGRES_PRISMA_URL")
+  directUrl = env("POSTGRES_URL_NON_POOLING")
 }
+
 generator client {
-  provider = "prisma-client-js"
+  provider        = "prisma-client-js"
   previewFeatures = ["driverAdapters"]
 }
 
@@ -56,8 +57,8 @@ model Session {
   userId       String
   expires      DateTime
   user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
 }
 
 model VerificationToken {
@@ -101,21 +102,22 @@ model Services {
 }
 
 model Bookings {
-  id        String  @id @default(cuid())
-  name      String
-  email     String?
-  contact   String
-  status    Status  @default(PENDING)
-  tel       String?
+  id         String   @id @default(cuid())
+  name       String
+  email      String?
+  contact    String
+  status     Status   @default(PENDING)
+  tel        String?
   date       String
-  time      String
-  venue     String
-  occassion String
-  userId    String
+  time       String
+  venue      String
+  occassion  String
+  userId     String
+  package    String
   population Int
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  user      User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
 enum Status {

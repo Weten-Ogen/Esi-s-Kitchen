@@ -1,5 +1,4 @@
-import prisma from "@/lib/prisma"
-import { revalidatePath } from "next/cache"
+import prisma from "@/lib/prisma";
 import { NextResponse } from "next/server"
 
 export async function POST(req:Request) {
@@ -8,7 +7,7 @@ export async function POST(req:Request) {
         const newdata = await prisma.bookings.create({
             data:body,
         })
-        return NextResponse.json({data:newdata,status:400})
+        return NextResponse.json({data:newdata,status:200})
     } catch (error) {
         return NextResponse.json({data:error, status:500})
     }

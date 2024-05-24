@@ -12,6 +12,7 @@ export async function appointment (input:any){
     )
     revalidatePath("/admin/bookings")
     redirect("/admin/bookings")
+    return 
 
 }
 export async function googleSignIn(formData:FormData) {

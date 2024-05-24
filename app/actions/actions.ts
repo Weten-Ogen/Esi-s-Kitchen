@@ -4,7 +4,7 @@ import prisma from "@/lib/prisma";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
-export async function appointment (input:any){
+export async function appointment(input:any){
     await prisma.booking.create(
         {
             data:input,

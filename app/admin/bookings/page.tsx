@@ -5,7 +5,7 @@ export default async function AdminBookings(){
    
   return (
     <section className="pt-20  ">
-      <div>{JSON.stringify(bookings)}</div>
+      <div>{}</div>
     </section>
   )
 }

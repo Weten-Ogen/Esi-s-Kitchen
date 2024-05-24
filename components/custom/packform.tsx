@@ -8,6 +8,7 @@ import { Input } from '../ui/input'
 import {Button} from '../ui/button'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../ui/select'
 import { Loader } from 'lucide-react'
+import { appointment } from '@/app/actions/actions'
 
 
 
@@ -41,11 +42,7 @@ export default function PackForm() {
 
     const handlesubmit =async (values:z.infer<typeof formSchema>) => {
         setLoading(prev => !prev)
-        await fetch('/api/form', {
-            method:'POST',
-            headers:{'Content-Type':"application/json"},
-            body:JSON.stringify(values)
-        })
+        await appointment(values);
         form.reset()
         setLoading(false)
     }

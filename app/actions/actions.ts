@@ -1,19 +1,13 @@
-"use server"
-
-
+"use serer"
 import { signIn, signOut } from "@/auth"
-import { value } from "@/components/custom/packform";
 import prisma from "@/lib/prisma";
-import { bookdata } from "@/next";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
-
-export async function appointment (newdata:value){
-    const midata = newdata
+export async function appointment (input:any){
     await prisma.booking.create(
         {
-            data:midata
+            data:input,
         }
     )
     revalidatePath("/admin/bookings")

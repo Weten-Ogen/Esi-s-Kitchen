@@ -15,7 +15,7 @@ export default function BookItem({name,contact,createdAt,date,email,id,occassion
             
             <p>{contact}</p>
             <p>{tel}</p>
-            {/* <p>{packages}</p> */}
+            <p>{packages}</p>
             <p>{population}</p>
             <p>{venue}</p>
             <p>{time}</p>

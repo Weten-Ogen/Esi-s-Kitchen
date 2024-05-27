@@ -20,7 +20,7 @@ export async function appointment(input:any){
             time:input.time!,
             venue:input.venue!,
             email:input.email!,
-            userId:userId,
+            userId:userId!,
             
         }
     })

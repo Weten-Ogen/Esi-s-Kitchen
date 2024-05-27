@@ -21,7 +21,7 @@ const formSchema =  z.object({
     tel:z.string().optional(),
     date:z.string().date(),
     time:z.string(),
-    package:z.string(),
+    packages:z.string(),
     occassion:z.string(),
     population:z.coerce.number()
 })
@@ -30,7 +30,7 @@ const formSchema =  z.object({
 
 export default function PackForm() {
     const [loading,setLoading] = useState(false)
-    const formRef = useRef<HTMLFormElement | null>(null)
+    
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues:{
@@ -50,7 +50,7 @@ export default function PackForm() {
   return (
     <Form {...form} >
 
-        <form ref={formRef} onSubmit={form.handleSubmit(handlesubmit)}
+        <form  onSubmit={form.handleSubmit(handlesubmit)}
         >
         {
             loading ? 
@@ -235,7 +235,7 @@ export default function PackForm() {
     
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 ">
 
-                    <FormField  control={form.control} name="package" 
+                    <FormField  control={form.control} name="packages" 
                 render={({field}) => {
                     return (
                         <FormItem>
@@ -247,12 +247,12 @@ export default function PackForm() {
                                     </SelectTrigger>
                                 </FormControl>
                                 <SelectContent>
-                                    <SelectItem value="naming ceremony">premium</SelectItem>
-                                    <SelectItem value="wedding">standard</SelectItem>
-                                    <SelectItem value="engagements">diamond</SelectItem>
-                                    <SelectItem value="funeral">platinum</SelectItem>
-                                    <SelectItem value="dinner">esi's special</SelectItem>
-                                    <SelectItem value="others">heritage</SelectItem>
+                                    <SelectItem value="premium">premium</SelectItem>
+                                    <SelectItem value="standard">standard</SelectItem>
+                                    <SelectItem value="diamond">diamond</SelectItem>
+                                    <SelectItem value="platinum">platinum</SelectItem>
+                                    <SelectItem value="esi's special">esi's special</SelectItem>
+                                    <SelectItem value="heritage">heritage</SelectItem>
                                 
                                 </SelectContent>
                         </Select>

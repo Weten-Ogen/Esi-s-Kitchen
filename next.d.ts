@@ -70,14 +70,19 @@ interface testicard {
 }
 
 interface bookdata  {
+    id:string
     name:string,
-    email:string,
+    email?:string | null,
     contact:string,
     venue:string,
     tel?:string | null,
     date:string,
     time:string,
-    package:string,
+    packages:string,
     occassion:string,
-    population:number
+    population:number,
+    userId:string,
+    updatedAt:Date,
+    createdAt:Date,
+
 }

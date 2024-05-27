@@ -71,7 +71,7 @@ CREATE TABLE "Authenticator" (
 );
 
 -- CreateTable
-CREATE TABLE "Packages" (
+CREATE TABLE "Package" (
     "id" TEXT NOT NULL,
     "name" TEXT NOT NULL,
     "items" TEXT[],
@@ -79,20 +79,20 @@ CREATE TABLE "Packages" (
     "imageurl" TEXT NOT NULL,
     "serviceId" TEXT NOT NULL,
 
-    CONSTRAINT "Packages_pkey" PRIMARY KEY ("id")
+    CONSTRAINT "Package_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
-CREATE TABLE "Services" (
+CREATE TABLE "Service" (
     "id" TEXT NOT NULL,
     "name" TEXT NOT NULL,
     "content" TEXT NOT NULL,
 
-    CONSTRAINT "Services_pkey" PRIMARY KEY ("id")
+    CONSTRAINT "Service_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
-CREATE TABLE "Bookings" (
+CREATE TABLE "Booking" (
     "id" TEXT NOT NULL,
     "name" TEXT NOT NULL,
     "email" TEXT,
@@ -109,7 +109,7 @@ CREATE TABLE "Bookings" (
     "updatedAt" TIMESTAMP(3) NOT NULL,
     "userId" TEXT NOT NULL,
 
-    CONSTRAINT "Bookings_pkey" PRIMARY KEY ("id")
+    CONSTRAINT "Booking_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateIndex
@@ -131,7 +131,7 @@ ALTER TABLE "Session" ADD CONSTRAINT "Session_userId_fkey" FOREIGN KEY ("userId"
 ALTER TABLE "Authenticator" ADD CONSTRAINT "Authenticator_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "Packages" ADD CONSTRAINT "Packages_id_fkey" FOREIGN KEY ("id") REFERENCES "Services"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE "Package" ADD CONSTRAINT "Package_id_fkey" FOREIGN KEY ("id") REFERENCES "Service"("id") ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "Bookings" ADD CONSTRAINT "Bookings_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE "Booking" ADD CONSTRAINT "Booking_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE CASCADE ON UPDATE CASCADE;

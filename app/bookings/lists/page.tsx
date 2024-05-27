@@ -16,7 +16,7 @@ export default async function BookingLists() {
   console.log(uniquser?.bookings)
     return (
     <div>
-        <BookComp  data={uniquser?.bookings}/>
+        <BookComp className=''  data={uniquser?.bookings!}/>
     </div>
   )
 }

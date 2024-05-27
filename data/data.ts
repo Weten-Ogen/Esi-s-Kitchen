@@ -1,4 +1,4 @@
-import { packProp } from "@/app/admin/packages/columns"
+
 
 export const packages = [
     {

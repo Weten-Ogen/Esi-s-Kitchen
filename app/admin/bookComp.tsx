@@ -9,8 +9,8 @@ interface pageprops {
 }
 export default function BookComp({data,className}:pageprops) {
   return (
-    <div className={cn('',className)}>
-        <div className="grid-cols-3 gap-3 items-center">
+    <div className={cn('w-full',className)}>
+        <div className="grid p-4 lg:p-0 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-auto  w-full gap-4 items-center">
             {data.map((item:bookdata) => <BookItem {...item}/>
             )}
         </div>

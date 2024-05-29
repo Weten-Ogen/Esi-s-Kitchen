@@ -3,6 +3,7 @@ import React from 'react'
 import { Button } from '../ui/button'
 import { googleSignOut } from '@/app/actions/actions'
 import { useFormStatus } from 'react-dom'
+import { Loader } from 'lucide-react'
 
 
 export default function SignOutBtn() {
@@ -10,9 +11,11 @@ export default function SignOutBtn() {
   return (
     <form action={googleSignOut}> 
       <Button
-      className='tracking-wide text-lg cap' 
+      className='tracking-wide text-lg ' 
       variant={"outline"} 
-      type="submit" aria-disabled={pending}>log out</Button>
+      type="submit" disabled={pending}>{pending ? <Loader className='animate-spin '/>:
+      "log out"}
+      </Button>
     </form>
   )
 }

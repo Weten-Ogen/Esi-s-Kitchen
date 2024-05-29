@@ -4,13 +4,15 @@ import DropDown from "../custom/navdropdown";
 import NavLinks from "../custom/navlinks";
 import Logo2 from '@/public/logo2.png'
 import AvaTar from "../custom/avaatar";
-import { useSession } from "next-auth/react";
 import SignInBtn from "../custom/signin";
+import { useSession } from "next-auth/react";
+import { Loader2 } from "lucide-react";
 
 
 
-export default function NavBar() {
-  const {data} = useSession();
+export default  function NavBar() {
+  const session = useSession();
+
 
   return (
     <nav className="flex justify-between gap-4 items-center  fixed w-full top-0 z-20 bg-slate-900 md:px-6">
@@ -28,15 +30,17 @@ export default function NavBar() {
      
         <>
         {
-          !data ? 
+          session.status === "unauthenticated" ? 
           <SignInBtn/>
+           : session.status === "loading" ? 
+           <Loader2 className="animate-spin text-white"/>
            :
           <div className="flex items-center  ml-auto">
             <DropDown/>
 
             <AvaTar 
-            imageurl={data?.user?.image}
-            name={data?.user?.name} 
+            imageurl={session.data?.user.image}
+            name={session.data?.user.name} 
             className="m-2"
           />
 

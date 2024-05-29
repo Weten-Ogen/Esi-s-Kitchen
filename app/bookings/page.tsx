@@ -3,10 +3,14 @@ import React from 'react'
 import ServiceCard from '@/components/custom/servicecard'
 import Image from 'next/image'
 import Footer from '@/components/general/footer'
-import { wait } from '@/lib/utils'
+import { auth } from '../../auth'
 
 
 export  default async function Bookings(){
+  const session = await auth();
+  if(!session) {
+    return <div className='pt-20 flex text-2xl capitalize items-center justify-center '> You need to login first!... </div>
+  }
   return (
     <section className='mt-20'>
       <article className="grid grid-cols-1 md:grid-cols-2 overflow-hidden md:h-[70vh]">

@@ -8,12 +8,17 @@ import Heritage from '@/public/products/yam.jpg'
 import Premium from '@/public/images/redpack.jpg'
 import Standard from '@/public/products/pizza.jpg'
 import { wait } from '@/lib/utils';
+import { auth } from '@/auth';
 
 
 
 export default async function SingleBooking({params}:singlebook) {
-  const {service} = await  params;
-  await wait(1000)
+  const {service} = params;
+  const session = await auth();
+  if(!session) {
+    return <div className='pt-20 flex text-2xl capitalize items-center justify-center '> You need to login first!... </div>
+  }
+
   return (
     <section className=" ">
       <article className="pt-24 m-h-screen">

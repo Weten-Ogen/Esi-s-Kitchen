@@ -71,27 +71,6 @@ CREATE TABLE "Authenticator" (
 );
 
 -- CreateTable
-CREATE TABLE "Package" (
-    "id" TEXT NOT NULL,
-    "name" TEXT NOT NULL,
-    "items" TEXT[],
-    "price" INTEGER NOT NULL,
-    "imageurl" TEXT NOT NULL,
-    "serviceId" TEXT NOT NULL,
-
-    CONSTRAINT "Package_pkey" PRIMARY KEY ("id")
-);
-
--- CreateTable
-CREATE TABLE "Service" (
-    "id" TEXT NOT NULL,
-    "name" TEXT NOT NULL,
-    "content" TEXT NOT NULL,
-
-    CONSTRAINT "Service_pkey" PRIMARY KEY ("id")
-);
-
--- CreateTable
 CREATE TABLE "Booking" (
     "id" TEXT NOT NULL,
     "name" TEXT NOT NULL,
@@ -103,7 +82,7 @@ CREATE TABLE "Booking" (
     "time" TEXT NOT NULL,
     "venue" TEXT NOT NULL,
     "occassion" TEXT NOT NULL,
-    "package" TEXT NOT NULL,
+    "packages" TEXT NOT NULL,
     "population" INTEGER NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,
@@ -121,6 +100,9 @@ CREATE UNIQUE INDEX "Session_sessionToken_key" ON "Session"("sessionToken");
 -- CreateIndex
 CREATE UNIQUE INDEX "Authenticator_credentialID_key" ON "Authenticator"("credentialID");
 
+-- CreateIndex
+CREATE INDEX "Booking_email_status_idx" ON "Booking"("email", "status");
+
 -- AddForeignKey
 ALTER TABLE "Account" ADD CONSTRAINT "Account_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE CASCADE ON UPDATE CASCADE;
 
@@ -129,9 +111,6 @@ ALTER TABLE "Session" ADD CONSTRAINT "Session_userId_fkey" FOREIGN KEY ("userId"
 
 -- AddForeignKey
 ALTER TABLE "Authenticator" ADD CONSTRAINT "Authenticator_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE CASCADE ON UPDATE CASCADE;
-
--- AddForeignKey
-ALTER TABLE "Package" ADD CONSTRAINT "Package_id_fkey" FOREIGN KEY ("id") REFERENCES "Service"("id") ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "Booking" ADD CONSTRAINT "Booking_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE CASCADE ON UPDATE CASCADE;

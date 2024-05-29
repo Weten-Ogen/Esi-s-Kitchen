@@ -1,9 +1,10 @@
 "use server"
-import { auth, signIn, signOut } from "@/app/auth"
+import { auth, signIn, signOut } from "@/auth"
 import prisma from "@/lib/prisma";
-import { User } from "lucide-react";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
+
+
 
 export async function appointment(input:any){
     const  session = await auth();
@@ -41,17 +42,16 @@ export async function deletebooking(id:string){
 }
 
 export async function googleSignIn(formData:FormData) {
-
+    
      await signIn("google",{redirectTo: "/bookings"});
-     revalidatePath('/')
+     revalidatePath('/bookings') 
      
 }
 
 
 export async function googleSignOut() {
-    await signOut({redirectTo:"/"});
-    revalidatePath('/')
-    
+    await signOut({redirectTo:'/'});
+    revalidatePath('/');
     
 }
 

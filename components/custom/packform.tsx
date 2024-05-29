@@ -131,7 +131,6 @@ export default function PackForm() {
                         <FormControl>
                             <Input 
                             placeholder="other tel"
-                            className=""
                             type='number'
                             {...field}
                             />

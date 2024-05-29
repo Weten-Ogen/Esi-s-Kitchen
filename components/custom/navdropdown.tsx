@@ -7,10 +7,12 @@ import { DropdownMenuLabel } from '@radix-ui/react-dropdown-menu'
 import { cn } from '@/lib/utils'
 import NavLinks from './navlinks'
 import SignOutBtn from './signout'
+import { useSession } from 'next-auth/react'
 
 
 export default function DropDown({className}:dropdown) {
-  const [position , setPosition] = React.useState('up');
+  const session = useSession()
+
   return (
     <div className={cn(' w-full ',className)}>
 
@@ -37,11 +39,23 @@ export default function DropDown({className}:dropdown) {
             <NavLinks name="bookings" reff="/bookings" className=''/>
           </DropdownMenuItem>
           <DropdownMenuSeparator/>
-          
+          { 
+          session.data?.user.role === "Admin" ?
+            <>
+            <DropdownMenuItem className='text-lg tracking-wider whitespace-normal'>
+              <NavLinks name="admin" reff="/admin" className=''/>
+            </DropdownMenuItem>
+            <DropdownMenuSeparator/> 
+            </>
+          :
+          <>
           <DropdownMenuItem className='text-lg tracking-wider whitespace-normal'>
-            <NavLinks name="admin" reff="/admin" className=''/>
+            <NavLinks name="events" reff="/bookings/lists" className=''/>
           </DropdownMenuItem>
           <DropdownMenuSeparator/>
+          </>
+          }
+
           <DropdownMenuItem className='text-lg tracking-wider whitespace-normal'>
             <SignOutBtn/>
           </DropdownMenuItem>

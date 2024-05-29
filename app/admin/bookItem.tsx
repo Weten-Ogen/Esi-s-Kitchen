@@ -16,7 +16,7 @@ export default function BookItem({name,contact,createdAt,date,email,id,occassion
   return (
     <div className='w-full p-4 bg-orange-500 shadow-lg rounded-lg'>
         <div className=''>
-            <p className={'mr-auto text-white'+ status === "PENDING" ? 'text-secondcolor': status === 'COMPLETED' ? 'text-green-500' : status === 'CANCELED' ? 'text-yellow-500': 'text-blue-500'}>{status}</p>
+            <p className={'hidden mr-auto text-white'+ status === "PENDING" ? 'text-secondcolor': status === 'COMPLETED' ? 'text-green-500' : status === 'CANCELED' ? 'text-yellow-500': 'text-blue-500'}>{status}</p>
             <div className='flex flex-col items-center  py-2'>
             <h2 className="capitalize text-lg text-white font-bold tracking-wider"> {name}</h2>
             {email && <p className='tracking-widest  text-md italic'>{email}</p>}

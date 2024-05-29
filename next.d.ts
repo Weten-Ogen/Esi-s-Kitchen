@@ -80,6 +80,7 @@ interface bookdata  {
     time:string,
     packages:string,
     occassion:string,
+    status:  enum,
     population:number,
     userId:string,
     updatedAt:Date,

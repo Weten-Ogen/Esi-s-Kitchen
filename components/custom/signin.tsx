@@ -12,8 +12,7 @@ export default  function SignInBtn() {
     >
       <Button 
       disabled={pending} 
-        type="submit">{pending ? 
-        <Loader className="animate-spin"/>:"log in"}</Button>
+        type="submit">{pending ? "loading ..." : "log in"}</Button>
     </form>
   )
 } 

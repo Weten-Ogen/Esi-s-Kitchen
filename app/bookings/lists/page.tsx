@@ -21,7 +21,7 @@ export default async function BookingLists() {
     return <div className='pt-24 flex text-2xl capitalize items-center justify-center '> You need to login first!... </div>
   }
     return (
-    <div className="pt-20 flex items-center gap-4 w-full bg-red-600 ">
+    <div className="pt-20  w-full  ">
       {
         !(uniquser?.bookings.length === 0)  ?
         <div className='flex flex-col items-center gap-4'>

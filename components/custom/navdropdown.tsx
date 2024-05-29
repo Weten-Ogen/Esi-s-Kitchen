@@ -8,10 +8,13 @@ import { cn } from '@/lib/utils'
 import NavLinks from './navlinks'
 import SignOutBtn from './signout'
 import { useSession } from 'next-auth/react'
+import { getuserrole } from '@/app/actions/actions'
 
 
 export default function DropDown({className}:dropdown) {
   const session = useSession()
+  const id = session.data?.user.id
+  const handlerole = async() => await getuserrole(id);
 
   return (
     <div className={cn(' w-full ',className)}>

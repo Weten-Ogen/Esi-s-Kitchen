@@ -112,8 +112,6 @@ export default function PackForm() {
                         <FormControl>
                             <Input 
                             placeholder="contact"
-                            className=""
-                            
                             {...field}
                             />
                         </FormControl>
@@ -131,11 +129,9 @@ export default function PackForm() {
                         <FormControl>
                             <Input 
                             placeholder="other tel"
-                            type='number'
                             {...field}
                             />
                         </FormControl>
-                        
                             <FormMessage className="text-md text-clip px-3 tracking-wide whitespace-normal  font-bold text-secondcolor"/>
                     </FormItem>
                 )

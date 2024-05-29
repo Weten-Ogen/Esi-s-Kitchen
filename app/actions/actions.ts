@@ -36,9 +36,9 @@ export async function deletebooking(id:string){
             id: id
         }
     })
+    
     revalidatePath('/admin');
     revalidatePath('/bookings/lists')
-    redirect('/bookings/lists')
 }
 
 export async function googleSignIn(formData:FormData) {
@@ -48,10 +48,19 @@ export async function googleSignIn(formData:FormData) {
      
 }
 
+export async function getuserrole(id:string | undefined) {
+    const user  = await prisma.user.findUnique({where : {
+        id
+    }})
+    return user?.role
 
+}
 export async function googleSignOut() {
     await signOut({redirectTo:'/'});
     revalidatePath('/');
     
 }
 
+export async function updatebooking(id:string) {
+
+}

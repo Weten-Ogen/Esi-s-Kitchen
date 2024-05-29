@@ -13,7 +13,7 @@ export default function SignOutBtn() {
       <Button
       className='tracking-wide text-lg ' 
       variant={"outline"} 
-      type="submit" disabled={pending}>{pending ? <Loader className='animate-spin '/>:
+      type="submit" disabled={pending}>{pending ? 'loading...':
       "log out"}
       </Button>
     </form>

@@ -17,6 +17,7 @@ interface navlink {
 interface dropdown extends React.ComponentProps<typeof DropdownMenu> {
     className?:string,
     trig?: string,
+    role?: string | null
 }
 
 interface btn {

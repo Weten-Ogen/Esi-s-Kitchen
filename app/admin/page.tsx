@@ -4,6 +4,8 @@ import { auth } from "@/auth"
 import prisma from '@/lib/prisma';
 import BookComp from './bookComp';
 import { bookdata } from '@/next';
+import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
 
 export default async function Admin() {
   const session = await auth();
@@ -16,7 +18,13 @@ export default async function Admin() {
   return (
     <section className="">
       <article className="pt-16">
-        <h2>Admin Page</h2>
+        <div className='flex item-center justify-between '>
+          <h2 className='text-2xl tracking-wider capitalize '>Admin Page</h2>
+            <form className='flex items-center gap-2 '>
+              <Input  placeholder='enter an email  '/>
+              <Button type='submit'>search</Button>
+            </form>
+        </div>
         <div className="">
           <BookComp className='rounded-lg    '  data={bookings}/>
         </div>

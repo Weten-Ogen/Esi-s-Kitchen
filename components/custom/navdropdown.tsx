@@ -12,10 +12,7 @@ import { getuserrole } from '@/app/actions/actions'
 
 
 export default function DropDown({className}:dropdown) {
-  const session = useSession()
-  const id = session.data?.user.id
-  const handlerole = async() => await getuserrole(id);
-
+  const session = useSession();
   return (
     <div className={cn(' w-full ',className)}>
 
@@ -42,8 +39,7 @@ export default function DropDown({className}:dropdown) {
             <NavLinks name="bookings" reff="/bookings" className=''/>
           </DropdownMenuItem>
           <DropdownMenuSeparator/>
-          { 
-          session.data?.user.role === "Admin" ?
+          { session.data?.user.role === "admin" ?
             <>
             <DropdownMenuItem className='text-lg tracking-wider whitespace-normal'>
               <NavLinks name="admin" reff="/admin" className=''/>

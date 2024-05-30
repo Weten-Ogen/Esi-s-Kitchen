@@ -12,5 +12,12 @@ export const  {
 } = 
 NextAuth({
     adapter:PrismaAdapter(prisma),
-    providers:[Google]
+    providers:[Google],
+    callbacks:{
+        session({session,user}){
+            session.user.id = user.id
+            session.user.role = user.role
+            return session
+        }
+    }       
 })

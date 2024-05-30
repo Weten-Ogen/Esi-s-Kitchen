@@ -12,8 +12,7 @@ import { Loader2 } from "lucide-react";
 
 export default  function NavBar() {
   const session = useSession();
-
-
+  console.log(session.data?.user)
   return (
     <nav className="flex justify-between gap-4 items-center  fixed w-full top-0 z-20 bg-slate-900 md:px-6">
         <header className= "p-2">
@@ -36,7 +35,8 @@ export default  function NavBar() {
            <Loader2 className="animate-spin text-white"/>
            :
           <div className="flex items-center  ml-auto">
-            <DropDown/>
+            <DropDown 
+            />
 
             <AvaTar 
             imageurl={session.data?.user.image}

@@ -14,7 +14,7 @@ export default function BookItem({name,contact,createdAt,date,email,id,occassion
   const handleUpdate = async() => await updatebooking(id); 
   
   return (
-    <div className='w-full p-4 bg-orange-500 shadow-lg rounded-lg'>
+    <div className='w-full p-4 bg-orange-400 shadow-lg rounded-lg'>
         <div className=''>
           
             <div className='flex flex-col items-center  py-2'>

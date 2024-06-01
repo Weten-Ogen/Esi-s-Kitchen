@@ -9,7 +9,7 @@ import Test2 from "@/public/testimonial/testmo2.jpg";
 import Test3 from "@/public/testimonial/testmo3.jpg";
 import Footer from "@/components/general/footer";
 import NavLinks from "@/components/custom/navlinks";
-import { wait } from "@/lib/utils";
+
 
 export default async function Home() {
   return (

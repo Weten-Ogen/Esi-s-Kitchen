@@ -13,7 +13,7 @@ model User {
   id            String          @id @default(cuid())
   name          String?
   email         String          @unique
-  e0mailVerified DateTime?
+  emailVerified DateTime?
   image         String?
   role          String?           
   bookings       Booking[]

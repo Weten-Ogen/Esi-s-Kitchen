@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter,Roboto,Salsa } from "next/font/google";
 import "./globals.css";
 import AppProvider from "@/components/providers";
+import { Toaster } from 'sonner'
 const salsa = Salsa({subsets:['latin'],weight:['400']})
 
 
@@ -21,6 +22,7 @@ export default function RootLayout({
         <AppProvider>
           {children}
         </AppProvider>
+        <Toaster richColors />
       </body>
     </html>
   );

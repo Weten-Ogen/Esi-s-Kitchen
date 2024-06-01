@@ -6,6 +6,7 @@ import { redirect } from "next/navigation";
 
 
 
+
 export async function appointment(input:any){
     const  session = await auth();
     const userId = session?.user.id
@@ -25,6 +26,7 @@ export async function appointment(input:any){
             
         }
     })
+    
     revalidatePath('/admin')
     revalidatePath('/bookings/lists')
     redirect('/bookings/lists')
@@ -36,7 +38,6 @@ export async function deletebooking(id:string){
             id: id
         }
     })
-    
     revalidatePath('/admin');
     revalidatePath('/bookings/lists')
 }
@@ -46,21 +47,20 @@ export async function googleSignIn(formData:FormData) {
      await signIn("google",{redirectTo: "/bookings"});
      revalidatePath('/bookings') 
      
+     
 }
 
-export async function getuserrole(id:string | undefined) {
-    const user  = await prisma.user.findUnique({where : {
-        id
-    }})
-    return user?.role
-
-}
 export async function googleSignOut() {
     await signOut({redirectTo:'/'});
-    revalidatePath('/');
-    
+    revalidatePath('/');    
 }
 
 export async function updatebooking(id:string) {
 
 }
+
+export async function searchbyemail(formData:FormData){
+    
+}
+
+    

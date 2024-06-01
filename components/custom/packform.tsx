@@ -1,5 +1,5 @@
 "use client"
-import React, { useEffect, useRef, useState } from 'react'
+import React,{ useState } from 'react'
 import { useForm } from 'react-hook-form'
 import * as z  from 'zod'
 import {zodResolver} from '@hookform/resolvers/zod'
@@ -9,6 +9,7 @@ import {Button} from '../ui/button'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../ui/select'
 import { Loader } from 'lucide-react'
 import { appointment } from '@/app/actions/actions'
+import  {toast } from 'sonner'
 
 
 
@@ -31,6 +32,7 @@ const formSchema =  z.object({
 export default function PackForm() {
     const [loading,setLoading] = useState(false)
     
+
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues:{
@@ -40,10 +42,12 @@ export default function PackForm() {
         }
     })
 
-    const handlesubmit =async (values:z.infer<typeof formSchema>) => {
+    const handlesubmit =async(values:z.infer<typeof formSchema>) => {
         setLoading(prev => !prev)
-        await appointment(values);
+        await appointment(values)
+        toast.success('you added an event')
         form.reset()
+        
         setLoading(false)
     }
 

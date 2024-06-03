@@ -7,8 +7,8 @@ export default async function Users() {
     const users = await prisma.user.findMany({});
     
   return (
-    <div>
-        {/* <DataTable columns={columns} data={users} /> */}
+    <div className="pt-20">
+        {<DataTable columns={columns} data={users}/>}
     </div>
   )
 }

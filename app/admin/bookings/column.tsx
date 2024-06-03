@@ -3,12 +3,12 @@
 import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
-import {  userdata } from "@/next"
+import { bookdata } from "@/next"
 import { ColumnDef } from "@tanstack/react-table"
 import { ArrowUpDown, MoreHorizontal } from "lucide-react"
 
 
-export const columns: ColumnDef<userdata>[] = [
+export const columns: ColumnDef<bookdata>[] = [
     {
       id: "select",
       header: ({ table }) => (
@@ -32,17 +32,17 @@ export const columns: ColumnDef<userdata>[] = [
       enableHiding: false,
     },
     {
-        accessorKey: "id",
-        header: () => <div>Id</div>,
-        cell: ({ row }) => {
-          return <div>{row.getValue('id')}</div>
-        }, 
-      },
+      accessorKey: "status",
+      header: "Status",
+      cell: ({ row }) => (
+        <div className="capitalize">{row.getValue("status")}</div>
+      ),
+    },
     {
       accessorKey: "email",
       header: ({ column }) => {
         return (
-            <Button
+          <Button
             variant="ghost"
             onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
           >
@@ -50,9 +50,9 @@ export const columns: ColumnDef<userdata>[] = [
             <ArrowUpDown className="ml-2 h-4 w-4" />
           </Button>
         )
+      },
+      cell: ({ row }) => <div className="lowercase">{row.getValue("email")}</div>,
     },
-    cell: ({ row }) => <div className="lowercase">{row.getValue("email")}</div>,
-},
     {
       accessorKey: "name",
       header: () => <div className="text-right">Name</div>,
@@ -61,36 +61,69 @@ export const columns: ColumnDef<userdata>[] = [
       },
     },
     {
-        accessorKey: "role",
-        header: () => <div>Role</div>,
+      accessorKey: "occassion",
+      header: () => <div>Occassion</div>,
+      cell: ({ row }) => {
+        return <div>{row.getValue('occassion')}</div>
+      },
+    },
+    {
+        accessorKey: "date",
+        header: () => <div>Date</div>,
         cell: ({ row }) => {
-            return <div>{row.getValue('role')}</div>
+          return <div>{row.getValue('date')}</div>
         },
       },
-      
+      {
+        accessorKey: "packages",
+        header: () => <div>packages</div>,
+        cell: ({ row }) => {
+          return <div>{row.getValue('packages')}</div>
+        },
+      },
+      {
+        accessorKey: "contact",
+        header: () => <div>Contact</div>,
+        cell: ({ row }) => {
+          return <div>{row.getValue('contact')}</div>
+        },
+      },
+      {
+        accessorKey: "population",
+        header: () => <div>Number per Head</div>,
+        cell: ({ row }) => {
+          return <div>{row.getValue('population')}</div>
+        },
+      },
+      {
+        accessorKey: "time",
+        header: () => <div>Time</div>,
+        cell: ({ row }) => {
+          return <div>{row.getValue('time')}</div>
+        },
+      },
       {
         accessorKey: "createdAt",
         header: () => <div>createdAt</div>,
         cell: ({ row }) => {
             const date = new Date(row.getValue('createdAt'))
-            return <div>{date.toUTCString()}</div>
+          return <div>{date.toUTCString()}</div>
         },
-    },
-    
-    {
+      },
+      {
+        accessorKey: "venue",
+        header: () => <div>Venue</div>,
+        cell: ({ row }) => {
+          return <div>{row.getValue('venue')}</div>
+        },
+      },
+      {
         accessorKey: "updatedAt",
         header: () => <div>UpdatedAt</div>,
         cell: ({ row }) => {
             const update = new Date(row.getValue('updatedAt'))
-            return <div>{update.toUTCString()}</div>
+          return <div>{update.toUTCString()}</div>
         },
-    },
-    {
-      accessorKey: "image",
-      header: () => <div>Image</div>,
-      cell: ({ row }) => {
-        return <div className=" ">{row.getValue('image')}</div>
       },
-    },
   ]
   

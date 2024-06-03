@@ -88,3 +88,15 @@ interface bookdata  {
     createdAt:Date,
 
 }
+
+interface userdata {
+    id:string,
+    name:string | null,
+    email:string | null,
+    emailVerified: Date | null ,
+    image:string | null,
+    role: string | null,   
+    createdAt:Date,
+    updatedAt:Date,
+}
+  

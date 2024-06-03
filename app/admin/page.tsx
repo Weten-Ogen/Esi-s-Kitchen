@@ -5,6 +5,7 @@ import prisma from '@/lib/prisma';
 import BookComp from './bookComp';
 import { bookdata } from '@/next';
 import AdminSearchForm from './adminsearchform';
+import NavLinks from '@/components/custom/navlinks';
 
 
 
@@ -19,14 +20,13 @@ export default async function Admin() {
   
 
   return (
-    <section className="">
+    <section className="pt-20 md:pt-16 ">
       <article className="pt-16">
-        <div className='flex item-center justify-between py-4'>
-          <h2 className='text-2xl tracking-wider capitalize '>Admin Page</h2>
-            <AdminSearchForm/>
-        </div>
-        <div className="pt-10">
-          <BookComp className='rounded-lg    '  data={bookings}/>
+        <h1 className='text-2xl font-bold tracking-wider capitalize'>Admin Page</h1>
+
+        <div className="pt-10 flex flex-col items-center justify-center  text-lg">
+          <NavLinks reff='/admin/users' name='users'/>
+          <NavLinks reff='/admin/bookings' name='bookings'/>
         </div>
         <ul>
           

@@ -4,13 +4,17 @@ import { bookdata } from '@/next'
 import React from 'react'
 import { useFormStatus } from 'react-dom';
 import { deletebooking, updatebooking } from '../actions/actions';
+import { toast } from 'sonner';
 
 export default function BookItem({name,contact,createdAt,date,email,id,occassion,packages,population,time,updatedAt,userId,venue,tel,status
 }:bookdata) {
 
   const acttime = parseInt(time.slice(0,2)) > 12 ? 'PM': 'AM';
   const {pending} = useFormStatus();
-  const handleDelete = async() => await deletebooking(id);
+  const handleDelete = async() => {
+    await deletebooking(id)
+    toast.success('event deleted successfully.')
+  };
   const handleUpdate = async() => await updatebooking(id); 
   
   return (

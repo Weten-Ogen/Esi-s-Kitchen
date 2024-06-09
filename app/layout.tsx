@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={salsa.className}>
-        <Toaster richColors position="top-center"/>
+        <Toaster richColors className="pt-20" position="top-center"/>
         <AppProvider>
           {children}
         </AppProvider>

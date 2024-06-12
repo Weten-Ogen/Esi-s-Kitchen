@@ -79,7 +79,6 @@ export async function updatebooking(values:bookdata) {
             time:values.time!,
             population:values.population!,
             date:values.date!,
-            
         }
     })
     revalidatePath('/bookings/lists')

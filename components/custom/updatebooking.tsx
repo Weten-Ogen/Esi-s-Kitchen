@@ -64,7 +64,7 @@ export default function UpdateBookForm({id,data}:packform) {
 
   return (
     <Form {...form} >
-    <form  onSubmit={form.handleSubmit(handlesubmit)}
+    <form  className="p-8 md:p-0" onSubmit={form.handleSubmit(handlesubmit)}
         >
         {
             loading ? 

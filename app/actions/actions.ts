@@ -66,7 +66,7 @@ export async function googleSignOut() {
         
 }
 
-export async function updatebooking(values:bookdata) {
+export async function updatebooking(values:any) {
     console.log(values)
     await prisma.booking.update({
         where: {

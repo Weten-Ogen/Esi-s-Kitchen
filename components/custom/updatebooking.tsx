@@ -109,7 +109,6 @@ export default function UpdateBookForm({id,data}:packform) {
                             {...field}
                             />
                         </FormControl>
-                    
                             <FormMessage className="text-md text-clip px-3 tracking-wide whitespace-normal  font-bold text-secondcolor"/>
                     </FormItem>
                 )

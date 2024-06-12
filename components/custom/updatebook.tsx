@@ -21,12 +21,12 @@ export default function UpdateDialog({id}:comprops) {
 
 
   return (
-    <div className='p-6 md:p-0 w-full'>
+    <div className='p-6 md:p-0 w-full m-4'>
       <Dialog >
           <DialogTrigger>
                       update
           </DialogTrigger>
-          <DialogContent className="p-4">
+          <DialogContent className="m-4 p-8 md:p-0">
                     {data &&  <UpdateBookForm  data={data}/>}
           </DialogContent>
       </Dialog>

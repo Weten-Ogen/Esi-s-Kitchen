@@ -27,7 +27,7 @@ export default function UpdateDialog({id}:comprops) {
                       update
           </DialogTrigger>
           <DialogContent>
-                    { <UpdateBookForm  data={data}/>}
+                    {data &&  <UpdateBookForm  data={data}/>}
           </DialogContent>
       </Dialog>
     </div>

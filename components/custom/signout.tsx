@@ -13,8 +13,8 @@ export default function SignOutBtn() {
       <Button
       className='tracking-wide text-lg ' 
       variant={"outline"} 
-      type="submit" disabled={pending}>{pending ? 'loading...':
-      "log out"}
+      type="submit" > 
+      log out
       </Button>
     </form>
   )

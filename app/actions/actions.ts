@@ -1,5 +1,5 @@
 "use server"
-import { auth, signIn, signOut } from "@/auth"
+import { auth, signIn,signOut } from "@/auth"
 import prisma from "@/lib/prisma";
 import { bookdata } from "@/next";
 import { revalidatePath } from "next/cache";
@@ -60,9 +60,10 @@ export async function googleSignIn(formData:FormData) {
      
 }
 
-export async function googleSignOut() {
-    await signOut();
-    redirect('/')
+export async function googleSignOut(current:string) {
+    await signOut({redirectTo:"/"})
+    revalidatePath(current)
+    
         
 }
 

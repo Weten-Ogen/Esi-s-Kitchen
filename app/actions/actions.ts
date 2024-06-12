@@ -68,7 +68,7 @@ export async function googleSignOut() {
 }
 
 export async function updatebooking(values:any) {
-    console.log(values)
+
     await prisma.booking.update({
         where: {
             id: values.id!,
@@ -86,8 +86,9 @@ export async function updatebooking(values:any) {
     revalidatePath('/admin/booking')
 }
 
-export async function searchbyemail(formData:FormData){
-    
-}
+
+
+
+
 
     

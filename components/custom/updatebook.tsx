@@ -4,30 +4,30 @@ import { Dialog,DialogContent,DialogClose,DialogTrigger } from '../ui/dialog'
 import UpdateBookForm from './updatebooking'
 import { bookdata } from '@/next'
 import { fetchbooking } from '@/app/actions/actions'
+import { Button } from '../ui/button'
 
 interface comprops {
  id : string
 }0
 export default function UpdateDialog({id}:comprops) {
-  const [data, setData] = React.useState<bookdata | null>()
+  const [data, setData] = React.useState<bookdata>({})
   const handledata = async() => {
     const fetchdata = await fetchbooking(id);
     setData(prev => prev = fetchdata)
   }
   React.useEffect(() => {
     handledata()
-    
   },[])
 
 
   return (
-    <div className='p-6 md:p-0 w-full m-4'>
+    <div className='mx-auto w-[80%] m-h-screen md:mx-auto md:w-full md:p-0 p-4'>
       <Dialog >
-          <DialogTrigger>
-                      update
+          <DialogTrigger className='text-center   w-full'>
+              <Button variant={'outline'} className='text-lg  capitalize  tracking-widest w-full bg-white hover:bg-white text-secondcolor'>update</Button>
           </DialogTrigger>
-          <DialogContent className="m-4 p-8 md:p-0">
-                    {data &&  <UpdateBookForm  data={data}/>}
+          <DialogContent>
+                    { <UpdateBookForm  data={data}/>}
           </DialogContent>
       </Dialog>
     </div>

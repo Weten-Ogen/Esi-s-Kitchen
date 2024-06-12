@@ -13,11 +13,11 @@ export default function BookItem({name,contact,createdAt,date,email,id,occassion
 
   const acttime = parseInt(time.slice(0,2)) > 12 ? 'PM': 'AM';
   const {pending} = useFormStatus();
+  
   const handleDelete = async() => {
     await deletebooking(id)
     toast.success('event deleted successfully.')
-  };
-   
+  }; 
   
   return (
     <div className='w-full p-4 bg-orange-400 shadow-lg rounded-lg'>
@@ -59,7 +59,7 @@ export default function BookItem({name,contact,createdAt,date,email,id,occassion
                
               </div>
             </div>
-            <div className='flex items-center justify-center gap-4 pt-4 '>
+            <div className='flex items-center justify-center gap-4 pt-4 text-center'>
               <UpdateDialog id={id} />
               <Button
               disabled={pending}

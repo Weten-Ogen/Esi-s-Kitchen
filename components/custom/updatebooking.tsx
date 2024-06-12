@@ -37,16 +37,16 @@ export default function UpdateBookForm({id,data}:packform) {
      const form= useForm<z.infer<typeof formSchema>>({
             resolver: zodResolver(formSchema),
             defaultValues:{
-                name:data.name,
-                email:data.email,
-                contact: data.contact,
-                packages:data.packages,
-                date:data.date,
+                name:data.name!,
+                email:data.email!,
+                contact: data.contact!,
+                packages:data.packages!,
+                date:data.date!,
                 tel:"",
-                occassion:data.occassion,
-                time:data.time,
-                venue:data.venue,
-                population:data.population,
+                occassion:data.occassion!,
+                time:data.time!,
+                venue:data.venue!,
+                population:data.population!,
             }
         })    
     

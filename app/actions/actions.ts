@@ -65,8 +65,11 @@ export async function googleSignOut() {
     redirect('/')
         
 }
-
-export async function updatebooking(id,values) {
+interface funcprops {
+    id:string,
+    values:bookdata
+}
+export async function updatebooking({id,values}:funcprops) {
     console.log(values)
     await prisma.booking.update({
         where: {

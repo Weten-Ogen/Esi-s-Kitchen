@@ -9,14 +9,14 @@ interface comprops {
  id : string
 }0
 export default function UpdateDialog({id}:comprops) {
-  const [data, setData] = React.useState<bookdata>({})
+  const [data, setData] = React.useState<bookdata | null>()
   const handledata = async() => {
     const fetchdata = await fetchbooking(id);
     setData(prev => prev = fetchdata)
   }
   React.useEffect(() => {
     handledata()
-    console.log(data)
+    
   },[])
 
 

@@ -21,7 +21,7 @@ export default function UpdateDialog({id}:comprops) {
 
 
   return (
-    <div className='p-6 md:p-0'>
+    <div className='p-6 md:p-0 w-full'>
       <Dialog >
           <DialogTrigger>
                       update

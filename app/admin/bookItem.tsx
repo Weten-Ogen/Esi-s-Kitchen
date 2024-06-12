@@ -59,7 +59,7 @@ export default function BookItem({name,contact,createdAt,date,email,id,occassion
                
               </div>
             </div>
-            <div className='flex items-center justify-center gap-4 pt-4'>
+            <div className='flex items-center justify-center gap-4 pt-4 '>
               <UpdateDialog id={id} />
               <Button
               disabled={pending}

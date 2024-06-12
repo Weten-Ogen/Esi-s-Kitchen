@@ -17,7 +17,7 @@ export default function BookItem({name,contact,createdAt,date,email,id,occassion
     await deletebooking(id)
     toast.success('event deleted successfully.')
   };
-  const handleUpdate = async() => await updatebooking(id); 
+   
   
   return (
     <div className='w-full p-4 bg-orange-400 shadow-lg rounded-lg'>

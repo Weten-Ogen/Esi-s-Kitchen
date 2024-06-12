@@ -55,7 +55,7 @@ export default function UpdateBookForm({id,data}:packform) {
 
     const handlesubmit =async(values:z.infer<typeof formSchema>) => {
         setLoading(prev => !prev)
-        await updatebooking(data.id,values)
+        await updatebooking(values)
         toast.success('you added an event')
         form.reset()
         

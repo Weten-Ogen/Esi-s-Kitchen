@@ -60,9 +60,9 @@ export async function googleSignIn(formData:FormData) {
      
 }
 
-export async function googleSignOut(current:string) {
+export async function googleSignOut() {
     await signOut({redirectTo:"/"})
-    revalidatePath(current)
+    revalidatePath('/')
     
         
 }

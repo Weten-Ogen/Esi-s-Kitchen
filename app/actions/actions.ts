@@ -1,6 +1,7 @@
 "use server"
 import { auth, signIn, signOut } from "@/auth"
 import prisma from "@/lib/prisma";
+import { bookdata } from "@/next";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
@@ -32,6 +33,15 @@ export async function appointment(input:any){
     redirect('/bookings/lists')
 }
 
+export async function fetchbooking(id:string) {
+    const event = await prisma.booking.findUnique({
+        where:{
+            id: id
+        }
+    })
+    return event
+
+}
 export async function deletebooking(id:string){
     await prisma.booking.delete({
         where:{
@@ -51,12 +61,29 @@ export async function googleSignIn(formData:FormData) {
 }
 
 export async function googleSignOut() {
-    await signOut({redirectTo:'/'});
-    revalidatePath('/');    
+    await signOut();
+    redirect('/')
+        
 }
 
-export async function updatebooking(id:string) {
-
+export async function updatebooking(id,values) {
+    console.log(values)
+    await prisma.booking.update({
+        where: {
+            id: id!,
+        },data:{
+            name : values.name!,
+            email : values.email!,
+            venue: values.venue!,
+            packages: values.venue!,
+            time:values.time!,
+            population:values.population!,
+            date:values.date!,
+            
+        }
+    })
+    revalidatePath('/bookings/lists')
+    revalidatePath('/admin/booking')
 }
 
 export async function searchbyemail(formData:FormData){

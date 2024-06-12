@@ -16,7 +16,7 @@ export default async function BookingLists() {
     }
   })
 
-  console.log( uniquser?.bookings )
+
   if( !session ) {
     return <div className='pt-24 flex text-2xl capitalize items-center justify-center '> You need to login first!... </div>
   }

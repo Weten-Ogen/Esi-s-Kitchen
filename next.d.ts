@@ -7,6 +7,10 @@ interface providers {
     children: React.ReactNode
 }
 
+interface packform {
+    data: bookdata,
+    id?:string 
+}
 interface navlink {
     name?: string,
     reff: string,

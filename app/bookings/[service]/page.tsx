@@ -38,13 +38,13 @@ export default async function SingleBooking({params}:singlebook) {
           name='diamond'
           price={85} 
           imageurl={Diamond}
-          items={["jollof", "waakye" ,"fried rice","chicken","fish","salad","spaghetti or vegetable stir fry","beef or chicken sauce", "gizzard or pork khebab + goat khebab", "keewele", "banku with grilled tilpia + okro stew","riceball with groundnut soup or kenkey with the family","fufu with goat light soup or chicken wings light soup"]}/>
+          items={["jollof", "waakye" ,"fried rice","chicken","fish","salad","spaghetti or vegetable stir fry","beef or chicken sauce", "gizzard or pork khebab + goat khebab", "keewele", "banku with grilled tilipia and okro stew","riceball with groundnut soup or kenkey with the family","fufu with goat light soup or chicken wings light soup"]}/>
 
           <PackCard
           name="esi's special"
           price={105}
           imageurl={Special} 
-          items={["assorted jollof", "waakye" ,"assorted fried rice","fried or grilled chicken","fried fish","salad","spaghetti","vegatable rice","beauce", "gizzard/goat/pork khebab", "kelewele", "banku with grilled tilapia & okro stew","tili + okro stew","kokontr riceball with groundnut soup", "kenkey with themily","aprapra"]}/>
+          items={["assorted jollof", "waakye" ,"assorted fried rice","fried or grilled chicken","fried fish","salad","spaghetti","vegatable rice","beauce", "gizzard/goat/pork khebab", "kelewele", "banku with grilled tilapia & okro stew","tilipia okro stew","kokonte or riceball with groundnut soup", "kenkey with family","aprapransa"]}/>
           <PackCard
           name="standard"
           imageurl={Standard}
@@ -54,12 +54,12 @@ export default async function SingleBooking({params}:singlebook) {
           name="Heritage"
           price={75} 
           imageurl={Heritage}
-          items={["aprapransa or mpotompotor","ampesi with palava sauce or garden eggs stew","kenkey with family","konkonte or  rice balls with groundnut soup", "fufu with goat light soup or chickien wing light soup", "RedRed (GoB3)or bambara beans with kaklo "]}/>
+          items={["aprapransa or mpotompotor","ampesi with palava sauce or garden eggs stew","kenkey with family","konkonte or  rice balls with groundnut soup", "fufu with goat light soup or chickien wing light soup", "RedRed (GoB3) or bambara beans with akaklo "]}/>
           <PackCard
           name="premium"
           price={60} 
           imageurl={Premium}
-          items={["jollof", "waakye" ,"fried rice","fried chicken","salad","spaghetti or kelewele","banku + okro stew"]}/>
+          items={["jollof", "waakye" ,"fried rice","fried chicken","salad","spaghetti or kelewele","banku and okro stew"]}/>
         </ul>
         </div>
       </article>

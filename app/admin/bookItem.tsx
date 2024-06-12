@@ -5,6 +5,8 @@ import React from 'react'
 import { useFormStatus } from 'react-dom';
 import { deletebooking, updatebooking } from '../actions/actions';
 import { toast } from 'sonner';
+import UpdateBookForm from '@/components/custom/updatebooking';
+import UpdateDialog from '@/components/custom/updatebook';
 
 export default function BookItem({name,contact,createdAt,date,email,id,occassion,packages,population,time,updatedAt,userId,venue,tel,status
 }:bookdata) {
@@ -58,9 +60,7 @@ export default function BookItem({name,contact,createdAt,date,email,id,occassion
               </div>
             </div>
             <div className='flex items-center justify-center gap-4 pt-4'>
-              <Button 
-              onClick={handleUpdate}
-              className='hidden w-full bg-white text-orange-500 capitalize  text-lg tracking-wider hover:bg-white whitespace-normal'>update</Button>
+              <UpdateDialog id={id} />
               <Button
               disabled={pending}
               onClick={handleDelete} 

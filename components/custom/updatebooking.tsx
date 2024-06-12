@@ -11,7 +11,7 @@ import { Loader } from 'lucide-react'
 import { appointment } from '@/app/actions/actions'
 import  {toast } from 'sonner'
 import { packform } from '@/next'
-
+import { updatebooking } from '@/app/actions/actions'
 
 
 
@@ -30,24 +30,32 @@ const formSchema =  z.object({
 
 
 
-export default function PackForm() {
+export default function UpdateBookForm({id,data}:packform) {
     const [loading,setLoading] = useState(false)
     
 
-    
-        const form = useForm<z.infer<typeof formSchema>>({
+     const form= useForm<z.infer<typeof formSchema>>({
             resolver: zodResolver(formSchema),
             defaultValues:{
-                name:"",
-                email:"",
-                population:200,
+                name:data.name,
+                email:data.email,
+                contact: data.contact,
+                packages:data.packages,
+                date:data.date,
+                tel:"",
+                occassion:data.occassion,
+                time:data.time,
+                venue:data.venue,
+                population:data.population,
             }
-        })
+        })    
+    
+        
     
 
     const handlesubmit =async(values:z.infer<typeof formSchema>) => {
         setLoading(prev => !prev)
-        await appointment(values)
+        await updatebooking(data.id,values)
         toast.success('you added an event')
         form.reset()
         
@@ -56,8 +64,7 @@ export default function PackForm() {
 
   return (
     <Form {...form} >
-
-        <form  onSubmit={form.handleSubmit(handlesubmit)}
+    <form  onSubmit={form.handleSubmit(handlesubmit)}
         >
         {
             loading ? 

@@ -39,21 +39,21 @@ export default function DropDown({className}:dropdown) {
             <NavLinks name="bookings" reff="/bookings" className=''/>
           </DropdownMenuItem>
           <DropdownMenuSeparator/>
-          { session.data?.user.role === "admin" ?
+          { session.data?.user.role === "admin"&&
             <>
             <DropdownMenuItem className='text-lg tracking-wider whitespace-normal'>
               <NavLinks name="admin" reff="/admin" className=''/>
             </DropdownMenuItem>
             <DropdownMenuSeparator/> 
             </>
-          :
+  
+          }
           <>
           <DropdownMenuItem className='text-lg tracking-wider whitespace-normal'>
             <NavLinks name="events" reff="/bookings/lists" className=''/>
           </DropdownMenuItem>
           <DropdownMenuSeparator/>
           </>
-          }
 
           <DropdownMenuItem className='text-lg tracking-wider whitespace-normal'>
             <SignOutBtn/>

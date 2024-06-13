@@ -20,7 +20,7 @@ const formSchema =  z.object({
     email:z.string().email().optional(),
     contact:z.string(),
     venue:z.string(),
-    tel:z.string().optional(),
+    contact2:z.string().optional(),
     date:z.string().date(),
     time:z.string(),
     packages:z.string(),
@@ -42,7 +42,7 @@ export default function UpdateBookForm({id,data}:packform) {
                 contact: data.contact!,
                 packages:data.packages!,
                 date:data.date!,
-                tel:"",
+                contact2:"",
                 occassion:data.occassion!,
                 time:data.time!,
                 venue:data.venue!,
@@ -65,7 +65,7 @@ export default function UpdateBookForm({id,data}:packform) {
   return (
     <Form {...form} >
     <form  className="" onSubmit={form.handleSubmit(handlesubmit)}
-        >
+    >
         {
             loading ? 
             <div className="flex items-center justify-center p-24 ">
@@ -75,234 +75,227 @@ export default function UpdateBookForm({id,data}:packform) {
             : 
             
             <>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-2">        
-        <FormField  control={form.control} name="name" 
-            render={({field}) => {
-                return (
-                    <FormItem>
-                        <FormLabel className="text-lg text-white tracking-wider text-clip whitespace-normal" >
-                            name
-                        </FormLabel>
-                        <FormControl>
-                            <Input 
-
-                            placeholder="name"
-                            className=""
-                            {...field}
-                            />
-                        </FormControl>
-
-                            <FormMessage className="text-md text-clip px-3 tracking-wide whitespace-normal  font-bold text-secondcolor"/>
-                    </FormItem>
-                )
-            }}
-        />
-        <FormField  control={form.control} name="email" 
-            render={({field}) => {
-                return (
-                    <FormItem>
-                        <FormLabel className="text-lg text-white tracking-wider text-clip whitespace-normal">email</FormLabel>
-                        <FormControl>
-                            <Input 
-                            placeholder="email address"
-                            type="email"
-                            {...field}
-                            />
-                        </FormControl>
-                            <FormMessage className="text-md text-clip px-3 tracking-wide whitespace-normal  font-bold text-secondcolor"/>
-                    </FormItem>
-                )
-            }}
-        />
-    </div>
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-2">
-
-        <FormField  control={form.control} name="contact" 
-            render={({field}) => {
-                return (
-                    <FormItem>
-                        <FormLabel className="text-lg text-white tracking-wider text-clip whitespace-normal">contact</FormLabel>
-                        <FormControl>
-                            <Input 
-                            placeholder="contact"
-                            {...field}
-                            />
-                        </FormControl>
-                       
-                            <FormMessage className="text-md text-clip px-3 tracking-wide whitespace-normal  font-bold text-secondcolor"/>
-                    </FormItem>
-                )
-            }}
-        />
-        <FormField  control={form.control} name="tel" 
-            render={({field}) => {
-                return (
-                    <FormItem>
-                        <FormLabel className="text-lg text-white tracking-wider text-clip whitespace-normal">other contact (optional)</FormLabel>
-                        <FormControl>
-                            <Input 
-                            placeholder="other tel"
-                            {...field}
-                            />
-                        </FormControl>
-                            <FormMessage className="text-md text-clip px-3 tracking-wide whitespace-normal  font-bold text-secondcolor"/>
-                    </FormItem>
-                )
-            }}
-        />
-    </div>
-    <div className='grid grid-cols-1 md:grid-cols-2 gap-4 p-2'>
-
-        <FormField  control={form.control} name="date" 
-            render={({field}) => {
-                return (
-                    <FormItem>
-                        <FormLabel className="text-lg text-white tracking-wider text-clip whitespace-normal">date</FormLabel>
-                        <FormControl>
-                            <Input 
-                            placeholder="pick a date"
-                            className=""
-                            type="date"
-                            {...field}
-                            />
-                        </FormControl>
-                        
-                            <FormMessage className="text-md text-clip px-3 tracking-wide whitespace-normal  font-bold text-secondcolor"/>
-                    </FormItem>
-                )
-            }}
-        />
-        <FormField  control={form.control} name="time" 
-            render={({field}) => {
-                return (
-                    <FormItem>
-                        <FormLabel className="text-lg text-white tracking-wider text-clip whitespace-normal">time</FormLabel>
-                        <FormControl>
-                            <Input 
-                            placeholder="time"
-                            className=""
-                             {...field}
-                            type="time"
-                            />
-                        </FormControl>
-                       
-                            <FormMessage className="text-md text-clip px-3 tracking-wide whitespace-normal  font-bold text-secondcolor"/>
-                    </FormItem>
-                )
-            }}
-        />
-    </div>
-    <div className='grid grid-cols-1 md:grid-cols-2 gap-4 p-2'>
-
-                    <FormField  control={form.control} name="occassion" 
-                render={({field}) => {
-                    return (
-                        <FormItem>
-                            <FormLabel className="text-lg text-white tracking-wider text-clip whitespace-normal">occassion</FormLabel>
-                            <Select onValueChange={field.onChange} defaultValue={field.value}>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-2">        
+                <FormField  control={form.control} name="name" 
+                    render={({field}) => {
+                        return (
+                            <FormItem>
+                                <FormLabel className="text-lg text-white tracking-wider text-clip whitespace-normal" >
+                                    name
+                                </FormLabel>
                                 <FormControl>
-                                    <SelectTrigger>
-                                        <SelectValue placeholder="select the occassion type"/>
-                                    </SelectTrigger>
-                                </FormControl>
-                                <SelectContent>
-                                    <SelectItem value="naming ceremony">naming ceremony</SelectItem>
-                                    <SelectItem value="wedding">wedding</SelectItem>
-                                    <SelectItem value="engagements">engagements</SelectItem>
-                                    <SelectItem value="funeral">funeral</SelectItem>
-                                    <SelectItem value="dinner">dinner</SelectItem>
-                                    <SelectItem value="others">others</SelectItem>
-                                
-                                </SelectContent>
-                        </Select>
-                          
-                            <FormMessage className="text-md text-clip px-3 tracking-wide whitespace-normal  font-bold text-secondcolor"/>
-                        </FormItem>
-                    )
-                }}
-            />
-                    <FormField  control={form.control} name="venue" 
-                render={({field}) => {
-                    return (
-                        <FormItem>
-                            <FormLabel className="text-lg text-white tracking-wider text-clip whitespace-normal">venue</FormLabel>
-                            <FormControl>
-                                <Input 
-                                placeholder="venue or location"
-                                type='text'
-                                {...field}
-                                />
-                            </FormControl>  
- 
-                            <FormMessage className="text-md text-clip px-3 tracking-wide whitespace-normal  font-bold text-secondcolor"/>
-                        </FormItem>
-                    )
-                }}
-            />
-    </div>
-    
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 ">
+                                    <Input 
 
+                                    placeholder="name"
+                                    className=""
+                                    {...field}
+                                    />
+                                </FormControl>
+
+                                    <FormMessage className="text-md text-clip px-3 tracking-wide whitespace-normal  font-bold text-secondcolor"/>
+                            </FormItem>
+                        )
+                    }}
+                />
+                <FormField  control={form.control} name="email" 
+                    render={({field}) => {
+                        return (
+                            <FormItem>
+                                <FormLabel className="text-lg text-white tracking-wider text-clip whitespace-normal">email</FormLabel>
+                                <FormControl>
+                                    <Input 
+                                    placeholder="email address"
+                                    type="email"
+                                    {...field}
+                                    />
+                                </FormControl>
+                                    <FormMessage className="text-md text-clip px-3 tracking-wide whitespace-normal  font-bold text-secondcolor"/>
+                            </FormItem>
+                        )
+                    }}
+                />
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-2">
+                <FormField  control={form.control} name="contact" 
+                    render={({field}) => {
+                        return (
+                            <FormItem>
+                                <FormLabel className="text-lg text-white tracking-wider text-clip whitespace-normal">contact</FormLabel>
+                                <FormControl>
+                                    <Input 
+                                    placeholder="contact"
+                                    {...field}
+                                    />
+                                </FormControl>
+                            
+                                    <FormMessage className="text-md text-clip px-3 tracking-wide whitespace-normal  font-bold text-secondcolor"/>
+                            </FormItem>
+                        )
+                    }}
+                />
+                <FormField  control={form.control} name="contact2" 
+                    render={({field}) => {
+                        return (
+                            <FormItem>
+                                <FormLabel className="text-lg text-white tracking-wider text-clip whitespace-normal">other contact (optional)</FormLabel>
+                                <FormControl>
+                                    <Input 
+                                    placeholder="secondary phone call"
+                                    {...field}
+                                    />
+                                </FormControl>
+                                    <FormMessage className="text-md text-clip px-3 tracking-wide whitespace-normal  font-bold text-secondcolor"/>
+                            </FormItem>
+                        )
+                    }}
+                />
+            </div>
+            <div className='grid grid-cols-1 md:grid-cols-2 gap-4 p-2'>
+                <FormField  control={form.control} name="date" 
+                    render={({field}) => {
+                        return (
+                            <FormItem>
+                                <FormLabel className="text-lg text-white tracking-wider text-clip whitespace-normal">date</FormLabel>
+                                <FormControl>
+                                    <Input 
+                                    placeholder="pick a date"
+                                    className=""
+                                    type="date"
+                                    {...field}
+                                    />
+                                </FormControl>
+                                
+                                    <FormMessage className="text-md text-clip px-3 tracking-wide whitespace-normal  font-bold text-secondcolor"/>
+                            </FormItem>
+                        )
+                    }}
+                />
+                <FormField  control={form.control} name="time" 
+                    render={({field}) => {
+                        return (
+                            <FormItem>
+                                <FormLabel className="text-lg text-white tracking-wider text-clip whitespace-normal">time</FormLabel>
+                                <FormControl>
+                                    <Input 
+                                    placeholder="time"
+                                    className=""
+                                    {...field}
+                                    type="time"
+                                    />
+                                </FormControl>
+                            
+                                    <FormMessage className="text-md text-clip px-3 tracking-wide whitespace-normal  font-bold text-secondcolor"/>
+                            </FormItem>
+                        )
+                    }}
+                />
+            </div>
+            <div className='grid grid-cols-1 md:grid-cols-2 gap-4 p-2'>
+                <FormField  control={form.control} name="occassion" 
+                        render={({field}) => {
+                            return (
+                                <FormItem>
+                                    <FormLabel className="text-lg text-white tracking-wider text-clip whitespace-normal">occassion</FormLabel>
+                                    <Select onValueChange={field.onChange} defaultValue={field.value}>
+                                        <FormControl>
+                                            <SelectTrigger>
+                                                <SelectValue placeholder="select the occassion type"/>
+                                            </SelectTrigger>
+                                        </FormControl>
+                                        <SelectContent>
+                                            <SelectItem value="naming ceremony">naming ceremony</SelectItem>
+                                            <SelectItem value="wedding">wedding</SelectItem>
+                                            <SelectItem value="engagements">engagements</SelectItem>
+                                            <SelectItem value="funeral">funeral</SelectItem>
+                                            <SelectItem value="dinner">dinner</SelectItem>
+                                            <SelectItem value="others">others</SelectItem>
+                                        
+                                        </SelectContent>
+                                </Select>
+                                
+                                    <FormMessage className="text-md text-clip px-3 tracking-wide whitespace-normal  font-bold text-secondcolor"/>
+                                </FormItem>
+                            )
+                        }}
+                    />
+                            <FormField  control={form.control} name="venue" 
+                        render={({field}) => {
+                            return (
+                                <FormItem>
+                                    <FormLabel className="text-lg text-white tracking-wider text-clip whitespace-normal">venue</FormLabel>
+                                    <FormControl>
+                                        <Input 
+                                        placeholder="venue or location"
+                                        type='text'
+                                        {...field}
+                                        />
+                                    </FormControl>  
+        
+                                    <FormMessage className="text-md text-clip px-3 tracking-wide whitespace-normal  font-bold text-secondcolor"/>
+                                </FormItem>
+                            )
+                        }}
+                    />
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 ">
                     <FormField  control={form.control} name="packages" 
-                render={({field}) => {
-                    return (
-                        <FormItem>
-                            <FormLabel className="text-lg text-white tracking-wider text-clip whitespace-normal">type of package</FormLabel>
-                            <Select onValueChange={field.onChange} defaultValue={field.value}>
-                                <FormControl>
-                                    <SelectTrigger>
-                                        <SelectValue placeholder="select the type of package"/>
-                                    </SelectTrigger>
-                                </FormControl>
-                                <SelectContent>
-                                    <SelectItem value="premium">premium</SelectItem>
-                                    <SelectItem value="standard">standard</SelectItem>
-                                    <SelectItem value="diamond">diamond</SelectItem>
-                                    <SelectItem value="platinum">platinum</SelectItem>
-                                    <SelectItem value="esi's special">esi's special</SelectItem>
-                                    <SelectItem value="heritage">heritage</SelectItem>
-                                
-                                </SelectContent>
-                        </Select>
+                        render={({field}) => {
+                            return (
+                                <FormItem>
+                                    <FormLabel className="text-lg text-white tracking-wider text-clip whitespace-normal">type of package</FormLabel>
+                                    <Select onValueChange={field.onChange} defaultValue={field.value}>
+                                        <FormControl>
+                                            <SelectTrigger>
+                                                <SelectValue placeholder="select the type of package"/>
+                                            </SelectTrigger>
+                                        </FormControl>
+                                        <SelectContent>
+                                            <SelectItem value="premium">premium</SelectItem>
+                                            <SelectItem value="standard">standard</SelectItem>
+                                            <SelectItem value="diamond">diamond</SelectItem>
+                                            <SelectItem value="platinum">platinum</SelectItem>
+                                            <SelectItem value="esi's special">esi's special</SelectItem>
+                                            <SelectItem value="heritage">heritage</SelectItem>
+                                        
+                                        </SelectContent>
+                                </Select>
 
-                            <FormMessage className="text-md text-clip px-3 tracking-wide whitespace-normal  font-bold text-secondcolor"/>
-                        </FormItem>
-                    )
-                }}
-            />
-                    <FormField  control={form.control} name="population" 
-                render={({field}) => {
-                    return (
-                        <FormItem>
-                            <FormLabel className="text-lg text-white tracking-wider text-clip whitespace-normal">number per head</FormLabel>
-                            <FormControl>
-                                <Input 
-                                placeholder='placeholder'
-                                type='number'
-                                min={200}
-                                className=""
-                                {...field}
-                                />
-                            </FormControl>  
-                            <FormMessage className="text-md text-clip px-3 tracking-wide whitespace-normal  font-bold text-secondcolor"/>
-                        </FormItem>
-                    )
-                }}
-            />
-    </div>
+                                    <FormMessage className="text-md text-clip px-3 tracking-wide whitespace-normal  font-bold text-secondcolor"/>
+                                </FormItem>
+                            )
+                        }}
+                    />
+                            <FormField  control={form.control} name="population" 
+                        render={({field}) => {
+                            return (
+                                <FormItem>
+                                    <FormLabel className="text-lg text-white tracking-wider text-clip whitespace-normal">number per head</FormLabel>
+                                    <FormControl>
+                                        <Input 
+                                        placeholder='placeholder'
+                                        type='number'
+                                        min={200}
+                                            className=""
+                                        {...field}
+                                        />
+                                    </FormControl>  
+                                    <FormMessage className="text-md text-clip px-3 tracking-wide whitespace-normal  font-bold text-secondcolor"/>
+                                </FormItem>
+                            )
+                        }}
+                    />
+            </div>
 
-    <div className="w-full my-4">
-        <Button  className="w-full bg-secondcolor text-xl uppercase whitespace-normal tracking-wider hover:bg-secondcolor opacity-80 hover:opacity-100 ease-out duration-500" type="submit">
-            submit
-        </Button>
-    </div>
-
-
+            <div className="w-full my-4">
+                <Button  className="w-full bg-green-500 text-xl uppercase whitespace-normal text-white tracking-wider hover:bg-secondcolor opacity-80 hover:opacity-100 ease-out duration-500" type="submit">
+                    submit
+                </Button>
+            </div>
             </>
-        }
-    
-        </form>
+            
+            }
 
-    </Form>
+    </form>
+  </Form>
   )
 }

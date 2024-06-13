@@ -1,6 +1,6 @@
 "use client"
 import React from 'react'
-import { Dialog,DialogContent,DialogClose,DialogTrigger } from '../ui/dialog'
+import { Dialog,DialogContent,DialogClose,DialogTrigger, DialogFooter } from '../ui/dialog'
 import UpdateBookForm from './updatebooking'
 import { bookdata } from '@/next'
 import { fetchbooking } from '@/app/actions/actions'
@@ -21,14 +21,21 @@ export default function UpdateDialog({id}:comprops) {
 
 
   return (
-    <div className='mx-auto w-[80%] m-h-screen md:mx-auto md:w-full md:p-0 p-4'>
+    <div className='mx-auto w-[80%] m-h-screen md:mx-auto md:w-full md:p-0 p
+    -4'>
       <Dialog >
-          <DialogTrigger className='text-center   w-full'>
-              <Button variant={'outline'} className='text-lg  capitalize  tracking-widest w-full bg-white hover:bg-white text-secondcolor'>update</Button>
+          <DialogTrigger  className='text-center  text-red-600 w-full bg-white tracking-widest capitalize py-2 rounded-lg'>
+              <>update</>
           </DialogTrigger>
-          <DialogContent>
+          <DialogContent className='bg-orange-500 mt-5 '>
+                   <div>
                     { <UpdateBookForm  data={data}/>}
+                   </div>
+                   <DialogClose asChild>
+                        <Button className='tracking-widest text-lg uppercase' type="button">cancel</Button>
+                   </DialogClose>
           </DialogContent>
+          
       </Dialog>
     </div>
   )

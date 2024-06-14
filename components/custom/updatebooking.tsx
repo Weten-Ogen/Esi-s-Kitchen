@@ -1,5 +1,5 @@
 "use client"
-import React,{ useState } from 'react'
+import React,{ useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import * as z  from 'zod'
 import {zodResolver} from '@hookform/resolvers/zod'
@@ -10,17 +10,17 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '.
 import { Loader } from 'lucide-react'
 import { appointment } from '@/app/actions/actions'
 import  {toast } from 'sonner'
-import { packform } from '@/next'
+import { bookdata, packform } from '@/next'
 import { updatebooking } from '@/app/actions/actions'
 
 
 
 const formSchema =  z.object({
-    name:z.string().min(2).max(50),
+    name:z.string().min(2).max(50), 
     email:z.string().email().optional(),
     contact:z.string(),
     venue:z.string(),
-    contact2:z.string().optional(),
+    tel:z.string().optional(),
     date:z.string().date(),
     time:z.string(),
     packages:z.string(),
@@ -31,8 +31,7 @@ const formSchema =  z.object({
 
 
 export default function UpdateBookForm({id,data}:packform) {
-    const [loading,setLoading] = useState(false)
-    
+    const [loading,setLoading] = useState(false);
 
      const form= useForm<z.infer<typeof formSchema>>({
             resolver: zodResolver(formSchema),
@@ -42,7 +41,7 @@ export default function UpdateBookForm({id,data}:packform) {
                 contact: data.contact!,
                 packages:data.packages!,
                 date:data.date!,
-                contact2:"",
+                tel:"",
                 occassion:data.occassion!,
                 time:data.time!,
                 venue:data.venue!,
@@ -54,9 +53,10 @@ export default function UpdateBookForm({id,data}:packform) {
     
 
     const handlesubmit =async(values:z.infer<typeof formSchema>) => {
+        
         setLoading(prev => !prev)
-        await updatebooking(values)
-        toast.success('you added an event')
+        await updatebooking(id,values)
+        toast.success('updated an event.')
         form.reset()
         
         setLoading(false)
@@ -133,7 +133,7 @@ export default function UpdateBookForm({id,data}:packform) {
                         )
                     }}
                 />
-                <FormField  control={form.control} name="contact2" 
+                <FormField  control={form.control} name="tel" 
                     render={({field}) => {
                         return (
                             <FormItem>

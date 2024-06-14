@@ -9,7 +9,7 @@ interface providers {
 
 interface packform {
     data: bookdata,
-    id?:string 
+    id:string 
 }
 interface navlink {
     name?: string,

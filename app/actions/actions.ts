@@ -63,20 +63,20 @@ export async function googleSignIn(formData:FormData) {
 export async function googleSignOut() {
     await signOut({redirectTo:"/"})
     revalidatePath('/')
-    
-        
 }
-
-export async function updatebooking(values:any) {
-
+interface propss{
+    id:string,
+    values:any
+}
+export async function updatebooking(id:string,values:any) {
     await prisma.booking.update({
         where: {
-            id: values.id!,
+            id: id!,
         },data:{
             name : values.name!,
             email : values.email!,
             venue: values.venue!,
-            packages: values.venue!,
+            packages: values.packages!,
             time:values.time!,
             population:values.population!,
             date:values.date!,
@@ -84,6 +84,7 @@ export async function updatebooking(values:any) {
     })
     revalidatePath('/bookings/lists')
     revalidatePath('/admin/booking')
+    redirect('/bookings/lists')
 }
 
 

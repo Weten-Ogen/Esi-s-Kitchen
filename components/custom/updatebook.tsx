@@ -8,12 +8,12 @@ import { Button } from '../ui/button'
 
 interface comprops {
  id : string
-}0
+}
 export default function UpdateDialog({id}:comprops) {
-  const [data, setData] = React.useState<bookdata>({})
+  const [data, setData] = React.useState<any | null>(null)
   const handledata = async() => {
     const fetchdata = await fetchbooking(id);
-    setData(prev => prev = fetchdata)
+    setData((prev:any) => prev = fetchdata)
   }
   React.useEffect(() => {
     handledata()
@@ -29,7 +29,7 @@ export default function UpdateDialog({id}:comprops) {
           </DialogTrigger>
           <DialogContent className='bg-orange-500 mt-5 '>
                    <div>
-                    { <UpdateBookForm  data={data}/>}
+                    { <UpdateBookForm id={id} data={data}/>}
                    </div>
                    <DialogClose asChild>
                         <Button className='tracking-widest text-lg uppercase' type="button">cancel</Button>

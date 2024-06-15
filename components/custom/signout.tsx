@@ -4,27 +4,24 @@ import { Button } from '../ui/button'
 import { googleSignOut } from '@/app/actions/actions'
 import { useFormStatus } from 'react-dom'
 import { Loader } from 'lucide-react'
-import {useRouter} from 'next/navigation'
+import {usePathname} from 'next/navigation'
 import { toast } from 'sonner'
 
 export default function SignOutBtn() {
-  const router = useRouter()
+  const pathname = usePathname()
   const {pending} = useFormStatus();
-  
   const handlesignout = async() => {
-      await  googleSignOut()
-      router.refresh()
-      toast.success('logged out successfully')
+    await googleSignOut(pathname)
+    toast.success('logged out successfully.')
   }
+
   return (
-    <form> 
       <Button
-      onSubmit={handlesignout}
+      onClick={handlesignout}
       className='tracking-wide text-lg ' 
       variant={"outline"} 
-      type="submit" > 
+      type="button" > 
       log out
       </Button>
-    </form>
   )
 }

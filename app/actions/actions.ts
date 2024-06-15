@@ -57,7 +57,7 @@ export async function googleSignIn(formData:FormData) {
      revalidatePath('/bookings') 
 }
 
-export async function googleSignOut() {
+export async function googleSignOut(stand:string) {
     await signOut()
     redirect('/')
 }

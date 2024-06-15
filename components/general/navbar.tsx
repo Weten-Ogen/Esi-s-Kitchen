@@ -30,7 +30,7 @@ export default  function NavBar() {
      
         <>
         {
-          session.data?.user ? 
+          session.status === "authenticated"? 
           <div className="flex items-center  ml-auto">
             <DropDown 
             />

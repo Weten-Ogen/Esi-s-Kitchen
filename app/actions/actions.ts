@@ -53,16 +53,13 @@ export async function deletebooking(id:string){
 }
 
 export async function googleSignIn(formData:FormData) {
-    
      await signIn("google",{redirectTo: "/bookings"});
      revalidatePath('/bookings') 
-     
-     
 }
 
 export async function googleSignOut() {
     await signOut()
-    revalidatePath('/')
+    redirect('/')
 }
 interface propss{
     id:string,

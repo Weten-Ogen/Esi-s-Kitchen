@@ -12,7 +12,6 @@ export default function SignOutBtn() {
   return (
     <form action={googleSignOut}> 
       <Button
-      onClick={() => {router.refresh()}}
       className='tracking-wide text-lg ' 
       variant={"outline"} 
       type="submit" > 

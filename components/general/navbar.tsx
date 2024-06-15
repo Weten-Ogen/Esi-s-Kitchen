@@ -31,9 +31,7 @@ export default  function NavBar() {
         <>
         {
           session.status === "unauthenticated" ? 
-          <SignOutBtn/>
-           : session.status === "loading" ? 
-           <Loader2 className="animate-spin text-white"/>
+          <SignInBtn/>
            :
           <div className="flex items-center  ml-auto">
             <DropDown 
@@ -44,7 +42,6 @@ export default  function NavBar() {
             name={session.data?.user.name} 
             className="m-2"
           />
-
           </div>
         }
         </>

@@ -30,9 +30,7 @@ export default  function NavBar() {
      
         <>
         {
-          !session.data?.user ? 
-          <SignInBtn/>
-           :
+          session.data?.user ? 
           <div className="flex items-center  ml-auto">
             <DropDown 
             />
@@ -43,6 +41,8 @@ export default  function NavBar() {
             className="m-2"
           />
           </div>
+          :
+          <SignInBtn/>
         }
         </>
 

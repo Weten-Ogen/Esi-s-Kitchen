@@ -7,6 +7,7 @@ import AvaTar from "../custom/avaatar";
 import SignInBtn from "../custom/signin";
 import { useSession } from "next-auth/react";
 import { Loader2 } from "lucide-react";
+import SignOutBtn from "../custom/signout";
 
 
 
@@ -30,7 +31,7 @@ export default  function NavBar() {
         <>
         {
           session.status === "unauthenticated" ? 
-          <SignInBtn/>
+          <SignOutBtn/>
            : session.status === "loading" ? 
            <Loader2 className="animate-spin text-white"/>
            :

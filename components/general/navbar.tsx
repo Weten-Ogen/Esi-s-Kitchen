@@ -30,7 +30,7 @@ export default  function NavBar() {
      
         <>
         {
-          session.status === "unauthenticated" ? 
+          !session.data?.user ? 
           <SignInBtn/>
            :
           <div className="flex items-center  ml-auto">

@@ -59,8 +59,8 @@ export async function googleSignIn(formData:FormData) {
 
 export async function googleSignOut(stand:string) {
     await signOut()
-    redirect(`\${stand}`)
-    redirect('\')
+    redirect(`/${stand}`)
+    
 }
 interface propss{
     id:string,

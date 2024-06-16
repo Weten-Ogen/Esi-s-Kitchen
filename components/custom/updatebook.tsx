@@ -27,7 +27,7 @@ export default function UpdateDialog({id}:comprops) {
           <DialogTrigger  className='text-center  text-red-600 w-full bg-white tracking-widest capitalize py-2 rounded-lg'>
               <>update</>
           </DialogTrigger>
-          <DialogContent className='bg-orange-500 mx-auto w-np[90%]  '>
+          <DialogContent className='bg-orange-500 mx-auto w-[90%]  '>
                    <div className="">
                     { <UpdateBookForm id={id} data={data}/>}
                    </div>

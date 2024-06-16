@@ -64,7 +64,7 @@ export default function UpdateBookForm({id,data}:packform) {
 
   return (
     <Form {...form} >
-    <form  className="" onSubmit={form.handleSubmit(handlesubmit)}
+    <form  className="overflow-y-scroll   lg:overflow-hidden" onSubmit={form.handleSubmit(handlesubmit)}
     >
         {
             loading ? 
@@ -137,7 +137,7 @@ export default function UpdateBookForm({id,data}:packform) {
                     render={({field}) => {
                         return (
                             <FormItem>
-                                <FormLabel className="text-lg text-white tracking-wider text-clip whitespace-normal">other contact (optional)</FormLabel>
+                                <FormLabel className="text-lg text-white tracking-wider text-clip whitespace-normal">Contact 2</FormLabel>
                                 <FormControl>
                                     <Input 
                                     placeholder="secondary phone call"

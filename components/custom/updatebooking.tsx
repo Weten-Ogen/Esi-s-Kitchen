@@ -63,8 +63,10 @@ export default function UpdateBookForm({id,data}:packform) {
     }
 
   return (
+    <div className="overflow-y-auto ">
+
     <Form {...form} >
-    <form  className="overflow-y-scroll   lg:overflow-hidden" onSubmit={form.handleSubmit(handlesubmit)}
+    <form  className="" onSubmit={form.handleSubmit(handlesubmit)}
     >
         {
             loading ? 
@@ -75,7 +77,7 @@ export default function UpdateBookForm({id,data}:packform) {
             : 
             
             <>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-2">        
+                <div className="grid grid-cols-2 gap-4 ">        
                 <FormField  control={form.control} name="name" 
                     render={({field}) => {
                         return (
@@ -115,7 +117,7 @@ export default function UpdateBookForm({id,data}:packform) {
                     }}
                 />
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-2">
+            <div className="grid grid-cols-2 gap-4 p-2">
                 <FormField  control={form.control} name="contact" 
                     render={({field}) => {
                         return (
@@ -150,7 +152,7 @@ export default function UpdateBookForm({id,data}:packform) {
                     }}
                 />
             </div>
-            <div className='grid grid-cols-1 md:grid-cols-2 gap-4 p-2'>
+            <div className='grid grid-cols-2 gap-4 p-2'>
                 <FormField  control={form.control} name="date" 
                     render={({field}) => {
                         return (
@@ -190,7 +192,7 @@ export default function UpdateBookForm({id,data}:packform) {
                     }}
                 />
             </div>
-            <div className='grid grid-cols-1 md:grid-cols-2 gap-4 p-2'>
+            <div className='grid grid-cols-2 gap-4 p-2'>
                 <FormField  control={form.control} name="occassion" 
                         render={({field}) => {
                             return (
@@ -237,7 +239,7 @@ export default function UpdateBookForm({id,data}:packform) {
                         }}
                     />
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 ">
+            <div className="grid grid-cols-2 gap-4 ">
                     <FormField  control={form.control} name="packages" 
                         render={({field}) => {
                             return (
@@ -297,5 +299,6 @@ export default function UpdateBookForm({id,data}:packform) {
 
     </form>
   </Form>
+    </div>
   )
 }

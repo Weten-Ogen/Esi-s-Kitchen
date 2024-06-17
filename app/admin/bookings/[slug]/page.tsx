@@ -42,7 +42,6 @@ async function SinglebookingPage({params}:pageprops) {
   return (
     <section className="pt-24">
       <div className="">
-        
         {
           bookings &&
         <div>

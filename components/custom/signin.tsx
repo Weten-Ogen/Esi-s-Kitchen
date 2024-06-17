@@ -12,7 +12,7 @@ export default  function SignInBtn() {
     >
       <Button 
       disabled={pending} 
-        type="submit">{pending ? "loading ..." : "log in"}</Button>
+        type="submit">log in</Button>
     </form>
   )
 } 

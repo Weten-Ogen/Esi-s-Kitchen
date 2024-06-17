@@ -13,7 +13,6 @@ import SignOutBtn from "../custom/signout";
 
 export default  function NavBar() {
   const session = useSession();
-  console.log(session.data?.user)
   return (
     <nav className="flex justify-between gap-4 items-center  fixed w-full top-0 z-20 bg-slate-900 md:px-6">
         <header className= "p-2">

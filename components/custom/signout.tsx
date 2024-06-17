@@ -4,7 +4,7 @@ import { Button } from '../ui/button'
 import { googleSignOut } from '@/app/actions/actions'
 import { useFormStatus } from 'react-dom'
 import { Loader } from 'lucide-react'
-import {usePathname, useRouter} from 'next/navigation'
+import {redirect, usePathname, useRouter} from 'next/navigation'
 import { toast } from 'sonner'
 
 export default function SignOutBtn() {
@@ -15,6 +15,7 @@ export default function SignOutBtn() {
     await googleSignOut(pathname)
     router.refresh()
     toast.success('logged out successfully.')
+    redirect("/")
   }
 
   return (

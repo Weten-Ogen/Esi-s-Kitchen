@@ -24,9 +24,11 @@ export default async function Admin() {
       <article className="pt-16">
         <h1 className='text-2xl font-bold tracking-wider capitalize'>Admin Page</h1>
 
-        <div className="pt-10 flex flex-col items-center justify-center  text-lg">
+        <div className="pt-10 flex flex-col items-center justify-center  text-2xl">
           <NavLinks reff='/admin/users' name='users'/>
-          <NavLinks reff='/admin/bookings' name='bookings'/>
+          <NavLinks reff='/admin/bookings/table' name='bookings table view'/>
+          <NavLinks reff='/admin/bookings/card' name="bookings card view"/>
+          
         </div>
         <ul>
           

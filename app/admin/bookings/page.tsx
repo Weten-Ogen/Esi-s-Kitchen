@@ -9,7 +9,7 @@ import { redirect } from 'next/navigation';
 export default async function AdminBookings(){
 
    const session = await auth();
-   if(!session){
+   if(session === null){
      redirect("/")
    }
    const id = session?.user.id
@@ -22,18 +22,12 @@ export default async function AdminBookings(){
     }
    })
    const bookings:bookdata[] | undefined = user?.bookings
-   if(!session){
-    return <div className='pt-20 flex text-2xl capitalize items-center justify-center '> You need to login first!... </div>
+   if(session === null){
+    return 
    }
   return (
     <section className="pt-20  ">
-      {/* {
-        bookings &&
-      <div>
-        <BookComp className="pt-10" data={bookings}/>
-      </div>
-
-      } */}
+      
       {
         bookings &&
       <div>

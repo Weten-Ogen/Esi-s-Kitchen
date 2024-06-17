@@ -14,7 +14,7 @@ export default async function Admin() {
   const session = await auth();
   const bookings:bookdata[] = await prisma.booking.findMany();
   
-  if(!session) {
+  if(session === null) {
     return <div className='pt-20 flex text-2xl capitalize items-center justify-center '> You need to login first!... </div>
   }
   

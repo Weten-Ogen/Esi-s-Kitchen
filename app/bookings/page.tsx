@@ -9,7 +9,7 @@ import { redirect } from 'next/navigation'
 
 export  default async function Bookings(){
   const session = await auth();
-  if(session) {
+  if(session === null) {
     redirect('/')
   }
   return (

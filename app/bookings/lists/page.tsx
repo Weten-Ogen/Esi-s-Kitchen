@@ -17,13 +17,10 @@ export default async function BookingLists() {
     }
   })
   
-  if(session) {
+  if(session === null) {
     redirect("/")
   }
 
-  if( !session ) {
-    return <div className='pt-24 flex text-2xl capitalize items-center justify-center '> You need to login first!... </div>
-  }
     return (
     <div className="pt-20  w-full  ">
       {

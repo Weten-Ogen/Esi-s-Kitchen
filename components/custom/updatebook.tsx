@@ -28,7 +28,7 @@ export default function UpdateDialog({id}:comprops) {
               <>update</>
           </DialogTrigger>
           <DialogContent className='bg-orange-500 mx-auto w-[90%] '>
-                   <div className="pt-24 md:pt-12">
+                   <div className="pt-24 md:pt-12 px-10">
                     { <UpdateBookForm id={id} data={data}/>}
                    </div>
           </DialogContent>

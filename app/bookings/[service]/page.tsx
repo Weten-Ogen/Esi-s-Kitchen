@@ -16,7 +16,7 @@ import { redirect } from 'next/navigation';
 export default async function SingleBooking({params}:singlebook) {
   const {service} = params;
   const session = await auth();
-  if(!session) {
+  if(session === null) {
     return redirect("/")
   }
 

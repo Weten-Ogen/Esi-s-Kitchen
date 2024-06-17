@@ -9,6 +9,7 @@ import Premium from '@/public/images/redpack.jpg'
 import Standard from '@/public/products/pizza.jpg'
 import { wait } from '@/lib/utils';
 import { auth } from '@/auth';
+import { redirect } from 'next/navigation';
 
 
 
@@ -16,7 +17,7 @@ export default async function SingleBooking({params}:singlebook) {
   const {service} = params;
   const session = await auth();
   if(!session) {
-    return <div className='pt-20 flex text-2xl capitalize items-center justify-center '> You need to login first!... </div>
+    return redirect("/")
   }
 
   return (

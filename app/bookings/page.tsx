@@ -4,12 +4,13 @@ import ServiceCard from '@/components/custom/servicecard'
 import Image from 'next/image'
 import Footer from '@/components/general/footer'
 import { auth } from '../../auth'
+import { redirect } from 'next/navigation'
 
 
 export  default async function Bookings(){
   const session = await auth();
-  if(!session) {
-    return <div className='pt-20 flex text-2xl capitalize items-center justify-center '> You need to login first!... </div>
+  if(session) {
+    redirect('/')
   }
   return (
     <section className='mt-20'>

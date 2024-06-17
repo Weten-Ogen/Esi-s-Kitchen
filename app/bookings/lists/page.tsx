@@ -1,21 +1,25 @@
 import BookComp from '@/app/admin/bookComp';
 import { auth } from '@/auth';
 import prisma from '@/lib/prisma'
+import { redirect } from 'next/navigation';
 import React from 'react'
 
 export default async function BookingLists() {
   const session = await auth();
-
+  
   const user = session?.user.id;
-
+  
   const uniquser = await prisma.user.findUnique({
     where: {
-        id: user
+      id: user
     },include:{
-        bookings:true
+      bookings:true
     }
   })
-
+  
+  if(session) {
+    redirect("/")
+  }
 
   if( !session ) {
     return <div className='pt-24 flex text-2xl capitalize items-center justify-center '> You need to login first!... </div>

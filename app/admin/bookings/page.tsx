@@ -5,9 +5,13 @@ import BookComp from '../bookComp';
 import { bookdata } from '@/next';
 import DataTable from '@/components/ui/data-table';
 import { columns } from './column';
+import { redirect } from 'next/navigation';
 export default async function AdminBookings(){
 
    const session = await auth();
+   if(!session){
+     redirect("/")
+   }
    const id = session?.user.id
    const user = await prisma.user.findUnique({
     where:{

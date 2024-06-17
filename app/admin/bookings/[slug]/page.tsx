@@ -39,18 +39,21 @@ async function SinglebookingPage({params}:pageprops) {
       </section>
     )
   }
-  return (
-    <section className="pt-24">
-      <div className="">
-        {
-          bookings &&
-        <div>
-          <DataTable columns={columns} data={bookings}/>
+  if(slug=== "card") {
+
+    return (
+      <section className="pt-24">
+        <div className="">
+          {
+            bookings &&
+          <div>
+            <DataTable columns={columns} data={bookings}/>
+          </div>
+          }
         </div>
-        }
-      </div>
-    </section>
-  )
+      </section>
+    )
+  }
 }
 
 export default SinglebookingPage

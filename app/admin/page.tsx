@@ -26,8 +26,8 @@ export default async function Admin() {
 
         <div className="pt-10 flex flex-col items-center justify-center  text-2xl">
           <NavLinks className="hover:underline hover:underline-offset-2 hover:ease-out hover:duration-500 " reff='/admin/users' name='users'/>
-          <NavLinks className="hover:underline hover:underline-offset-2 hover:ease-out hover:duration-500 " reff='/admin/bookings/table' name='bookings table view'/>
-          <NavLinks className="hover:underline hover:underline-offset-2 hover:ease-out hover:duration-500 " reff='/admin/bookings/card' name="bookings card view"/>
+          <NavLinks className="hover:underline hover:underline-offset-2 hover:ease-out hover:duration-500 " reff='/admin/bookings/table' name='bookings card view'/>
+          <NavLinks className="hover:underline hover:underline-offset-2 hover:ease-out hover:duration-500 " reff='/admin/bookings/card' name="bookings table view"/>
           
         </div>
         <ul>

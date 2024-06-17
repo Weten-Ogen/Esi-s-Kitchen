@@ -146,8 +146,8 @@ export default function DataTable<TData,TValue>({columns,data}:DataTableProps<TD
             </TableBody>
           </Table>
         </div>
-        <div className="flex items-center justify-end space-x-2 py-4">
-          <div className="flex-1 text-sm text-muted-foreground">
+        <div className="flex items-center px-4 md:px-0 justify-end space-x-2 py-4">
+          <div className="flex-1 text-sm  text-muted-foreground">
             {table.getFilteredSelectedRowModel().rows.length} of{" "}
             {table.getFilteredRowModel().rows.length} row(s) selected.
           </div>

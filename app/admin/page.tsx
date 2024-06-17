@@ -24,7 +24,7 @@ export default async function Admin() {
       <article className="pt-16">
         <h1 className='text-2xl font-bold tracking-wider capitalize'>Admin Page</h1>
 
-        <div className="pt-10 flex flex-col items-center justify-center  text-2xl">
+        <div className="pt-10 flex flex-col items-center justify-center  text-2xl space-y-4">
           <NavLinks className="hover:underline hover:underline-offset-2 hover:ease-out hover:duration-500 " reff='/admin/users' name='users'/>
           <NavLinks className="hover:underline hover:underline-offset-2 hover:ease-out hover:duration-500 " reff='/admin/bookings/table' name='bookings card view'/>
           <NavLinks className="hover:underline hover:underline-offset-2 hover:ease-out hover:duration-500 " reff='/admin/bookings/card' name="bookings table view"/>

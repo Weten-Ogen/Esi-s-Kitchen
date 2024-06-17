@@ -60,7 +60,7 @@ export default function DataTable<TData,TValue>({columns,data}:DataTableProps<TD
    
     return (
       <div className="w-full">
-        <div className="flex items-center py-4">
+        <div className="flex items-center gap-2 px-4 md:px-0 py-4">
           <Input
             placeholder="Filter emails..."
             value={(table.getColumn("email")?.getFilterValue() as string) ?? ""}
@@ -126,7 +126,7 @@ export default function DataTable<TData,TValue>({columns,data}:DataTableProps<TD
                     {row.getVisibleCells().map((cell) => (
                       <TableCell key={cell.id}>
                         {flexRender(
-                          cell.column.columnDef.cell,
+                      cell.column.columnDef.cell,
                           cell.getContext()
                         )}
                       </TableCell>
@@ -151,7 +151,7 @@ export default function DataTable<TData,TValue>({columns,data}:DataTableProps<TD
             {table.getFilteredSelectedRowModel().rows.length} of{" "}
             {table.getFilteredRowModel().rows.length} row(s) selected.
           </div>
-          <div className="space-x-2">
+          <div className="space-x-2 space-y-2">
             <Button
               variant="outline"
               size="sm"
